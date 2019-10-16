@@ -1,2 +1,2 @@
 # HCI-project
-HCI project sjsjaj
+HCI project
