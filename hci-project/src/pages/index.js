@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
-/* import Layout from "../components/layout"
-import Image from "../components/image"
+import Layout from "../components/layout"
+/* import Image from "../components/image"
 import SEO from "../components/seo" */
 
 const Home = () => (
-  <div>
+  <Layout>
     <h1>HCI project</h1>
     <h2>Pages</h2>
 
@@ -16,7 +16,7 @@ const Home = () => (
       <li><Link to="/public_pages/signin">Sign in</Link></li>
       <li><Link to="/public_pages/signup">Sign up</Link></li>
     </ul>
-  </div>
+  </Layout>
 )
 
 export default Home

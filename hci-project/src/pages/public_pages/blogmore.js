@@ -4,8 +4,10 @@ import { Link } from "gatsby"
 const BlogMore = () => (
   <div>
     <h1>Blog More</h1>
-    <Link to="/">Back to home</Link>
-    <Link to="/public_pages/blog">Back to blog</Link>
+    <ul>
+      <li><Link to="/">Back to home</Link></li>
+      <li><Link to="/public_pages/blog">Back to blog</Link></li>
+    </ul>
   </div>
 )
 
