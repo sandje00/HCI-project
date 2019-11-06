@@ -12,7 +12,7 @@ const SignedIn = () => {
             <button className={`${headerStyles.signinout} ${headerStyles.button}`}>
                 <Link
                     className={headerStyles.blackButtonText}
-                    to="../../pages/private_pages/cart">
+                    to="../../private_pages/cart">
                         Sign out</Link>
             </button>
         </div>

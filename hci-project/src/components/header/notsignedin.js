@@ -8,13 +8,13 @@ const NotSignedIn = () => {
         <div className={headerStyles.buttongroup}>
             <button className={`${headerStyles.signinout} ${headerStyles.button}`}>
                 <Link
-                    to="../../pages/public_pages/signin"
+                    to="../../public_pages/signin"
                     className={headerStyles.blackButtonText}>
                         Sign in</Link>
             </button>
             <button className={`${headerStyles.signup} ${headerStyles.button}`}>
                 <Link
-                    to="../../pages/public_pages/signup"
+                    to="../../public_pages/signup"
                     className={headerStyles.whiteButtonText}>
                         Sign up</Link>
             </button>
