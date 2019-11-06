@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Layout from "../../components/layout"
+
 const SignIn = () => (
-  <div>
+  <Layout>
     <h1>Sign in</h1>
 
     <ul>
@@ -11,7 +13,7 @@ const SignIn = () => (
     </ul>
 
     <Link to="/">Back to home</Link>
-  </div>
+  </Layout>
 )
 
 export default SignIn

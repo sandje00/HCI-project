@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Layout from "../../components/layout"
+
 const SignUp = () => (
-  <div>
+  <Layout>
     <h1>Sign up</h1>
 
     <ul>
@@ -11,7 +13,7 @@ const SignUp = () => (
     </ul>
 
     <Link to="/">Back to home</Link>
-  </div>
+  </Layout>
 )
 
 export default SignUp

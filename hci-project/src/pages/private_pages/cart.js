@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Layout from "../../components/layout"
+
 /* import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo" */
 
 const Cart = () => (
-  <div>
+  <Layout>
     <h1>Cart</h1>
 
     <ul>
@@ -17,7 +19,7 @@ const Cart = () => (
     <h2>
       <Link to="/">Home</Link>
     </h2>
-  </div>
+  </Layout>
 )
 
 export default Cart

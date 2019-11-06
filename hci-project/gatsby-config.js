@@ -1,44 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `HCI project`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     menuLinks: [
       {
-        name: 'home',
+        name: 'Home',
         path: '/'
       },
       {
-        name: 'blog',
+        name: 'Blog',
         path: '/public_pages/blog'
       },
       {
-        name: 'blogmore',
-        path: '/public_pages/blogmore'
-      },
-      {
-        name: 'signin',
-        path: '/public_pages/signin'
-      },
-      {
-        name: 'signup',
-        path: '/public_pages/signup'
-      },
-      {
-        name: 'tutorialmore',
-        path: '/public_pages/tutorialmore'
-      },
-      {
-        name: 'tutorials',
+        name: 'Tutorials',
         path: '/public_pages/tutorials'
-      },
-      {
-        name: 'cart',
-        path: '/private_pages/cart'
-      },
-      {
-        name: 'bookmarks',
-        path: '/private_pages/bookmarks'
       },
     ],
   },

@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Layout from "../../components/layout"
+
 const Blog = () => (
-  <div>
+  <Layout>
     <h1>Blog</h1>
 
     <ul>
@@ -12,7 +14,7 @@ const Blog = () => (
     </ul>
 
     <Link to="/">Back to home</Link>
-  </div>
+  </Layout>
 )
 
 export default Blog

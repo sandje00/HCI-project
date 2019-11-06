@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Layout from "../../components/layout"
+
 /* import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo" */
 
 const Bookmarks = () => (
-  <div>
+  <Layout>
     <h1>Bookmarks</h1>
 
     <ul>
@@ -17,7 +19,7 @@ const Bookmarks = () => (
     <h2>
       <Link to="/">Home</Link>
     </h2>
-  </div>
+  </Layout>
 )
 
 export default Bookmarks

@@ -1,0 +1,85 @@
+.header {
+    z-index: 10;
+    height: 70px;
+    background: #303030;
+    margin-bottom: 1.45rem;
+}
+
+.navdiv {
+    margin: 0 auto;
+    max-width: 960;
+    height: 70px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    flex: 1;
+}
+
+.navbar {
+    display: flex;
+    flex: 1; 
+    flex-direction: row;
+    margin-left: 0;
+}
+
+.navlinks {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.buttongroup {
+    display: flex;
+}
+
+.button {
+    margin-left: 15px;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+}
+
+.signinout {
+    background-color: #303030;
+    text-decoration-color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.signup {
+    margin-right: 20px;
+    background-color: #ffffff;
+    text-decoration-color: #000000;
+}
+
+.link {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.link:active, .link:hover, .active {
+    text-decoration: underline;
+    color: #ffb300;
+    text-decoration-color: #ffb300;
+}
+
+.blackButtonText {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.whiteButtonText {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.icons {
+    color: #ffffff;
+}
