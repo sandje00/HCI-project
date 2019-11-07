@@ -29,8 +29,14 @@
     padding: 1rem;
 }
 
-.buttongroup {
+.buttongroup1 {
     display: flex;
+}
+
+.buttongroup2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .button {
@@ -82,4 +88,6 @@
 
 .icons {
     color: #ffffff;
+    font-size: 2em;
+    margin-left: 15px;
 }

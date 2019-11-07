@@ -5,7 +5,7 @@ import headerStyles from "./header.module.css"
 
 const NotSignedIn = () => {
     return (
-        <div className={headerStyles.buttongroup}>
+        <div className={headerStyles.buttongroup1}>
             <button className={`${headerStyles.signinout} ${headerStyles.button}`}>
                 <Link
                     to="../../public_pages/signin"

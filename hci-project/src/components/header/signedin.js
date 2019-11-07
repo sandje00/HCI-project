@@ -6,9 +6,9 @@ import headerStyles from "./header.module.css"
 
 const SignedIn = () => {
     return (
-        <div className={headerStyles.buttongroup}>
-            <FaBookmark className={`${headerStyles.icons} fa-10x`}/>
-            <FaShoppingCart className={`${headerStyles.icons} fa-10x`}/>
+        <div className={headerStyles.buttongroup2}>
+            <FaBookmark className={headerStyles.icons}/>
+            <FaShoppingCart className={headerStyles.icons}/>
             <button className={`${headerStyles.signinout} ${headerStyles.button}`}>
                 <Link
                     className={headerStyles.blackButtonText}

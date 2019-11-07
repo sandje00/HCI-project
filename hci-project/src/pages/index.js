@@ -1,12 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-/* import Image from "../components/image"
-import SEO from "../components/seo" */
+import Image from "gatsby-image"
+/* import SEO from "../components/seo" */
 
-const Home = () => (
-  <Layout>
+const Home = ({ data }) => {
+  console.log(data)
+
+  return (<Layout>
     <h1>HCI project</h1>
     <h2>Pages</h2>
 
@@ -17,7 +19,30 @@ const Home = () => (
       <li><Link to="/public_pages/signup">Sign up</Link></li>
     </ul>
     
-  </Layout>
-)
+    {/* <Image fluid={data.allFile.edges[0].node.childImageSharp.fluid} /> */}
+
+    {data.allFile.edges.map(({node})=> ( 
+      <Image key={node.id} fluid={node.childImageSharp.fluid} /> 
+    ))}
+
+  </Layout>)
+}
 
 export default Home
+
+export const query = graphql`
+{
+    allFile(filter: {absolutePath: {regex: "//src/images//"}}) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`

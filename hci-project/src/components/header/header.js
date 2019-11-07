@@ -6,7 +6,7 @@ import SignedIn from "./signedin"
 import NotSignedIn from "./notsignedin"
 import headerStyles from "./header.module.css"
 
-const isUserSignedIn = false; //temporary
+const isUserSignedIn = true; //temporary
 
 const Header = ({ menuLinks }) => (
   <header className={headerStyles.header}>
