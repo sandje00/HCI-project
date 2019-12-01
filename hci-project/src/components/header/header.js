@@ -1,44 +1,28 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { useWindowWidth } from '@react-hook/window-size'
 
-import SignedIn from "./signedin"
-import NotSignedIn from "./notsignedin"
-import headerStyles from "./header.module.css"
+import Desktop from "./desktop"
+import Mobile from "./mobile"
+import headerStyles from "../../styles/header.module.css"
 
-const isUserSignedIn = true; //temporary
 
-const Header = ({ menuLinks }) => (
-  <header className={headerStyles.header}>
-    <div className={headerStyles.navdiv}>
-      <span className={headerStyles.link}>Logo</span> {/* temporary */}
-      <div>
-          <nav>
-            <ul className={headerStyles.navbar}>
-              {menuLinks.map(({name, path}) => (
-                <li
-                  key={name}
-                  className={headerStyles.navlinks}
-                >
-                  <Link 
-                    className={headerStyles.link}
-                    activeClassName={headerStyles.active}
-                    to={path}>
-                    {name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-        {isUserSignedIn ? (
-          <SignedIn />
+const Header = ({ menuLinks }) => {
+  let width = useWindowWidth()
+
+  return (
+    <header className={headerStyles.header}>
+      <div className={headerStyles.navdiv}>
+        <span className={headerStyles.link}>Logo</span> {/* temporary */}
+        {width > 576 ? (
+          <Desktop menuLinks={menuLinks} />
         ) : (
-          <NotSignedIn />
+          <Mobile menuLinks={menuLinks} />
         )}
-    </div>
-  </header>
-)
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
