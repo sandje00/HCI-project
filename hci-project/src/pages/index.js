@@ -5,10 +5,8 @@ import Layout from "../components/layout"
 import Image from "gatsby-image"
 /* import SEO from "../components/seo" */
 
-const Home = ({ data }) => {
-  console.log(data)
-
-  return (<Layout>
+const Home = ({ data }) => (
+  <Layout>
     <h1>HCI project</h1>
     <h2>Pages</h2>
 
@@ -25,8 +23,8 @@ const Home = ({ data }) => {
       <Image key={node.id} fluid={node.childImageSharp.fluid} /> 
     ))}
 
-  </Layout>)
-}
+  </Layout>
+)
 
 export default Home
 

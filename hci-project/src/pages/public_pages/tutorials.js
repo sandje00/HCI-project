@@ -1,20 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 
-const Tutorials = () => (
-  <Layout>
-    <h1>Tutorials</h1>
-
-    <ul>
-      <li><Link to="/public_pages/tutorialmore">Tutorials more</Link></li>
-      <li><Link to="/public_pages/tutorialmore">Tutorials more</Link></li>
-      <li><Link to="/public_pages/tutorialmore">Tutorials more</Link></li>
-    </ul>
-
-    <Link to="/">Back to home</Link>
-  </Layout>
-)
-
+const Tutorials = ({ data }) => {
+  console.log(data)
+  return (
+    <Layout>
+      
+    </Layout>
+  )
+}
 export default Tutorials
+
+export const query = graphql`{
+  allTutorialsJson {
+    edges {
+      node {
+        title
+        language
+        level
+        price
+      }
+    }
+  }
+}
+`
