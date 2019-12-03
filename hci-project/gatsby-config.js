@@ -10,7 +10,8 @@ module.exports = {
       },
       {
         name: 'Blog',
-        path: '/public_pages/blog'
+        path: '/public_pages/blog',
+        partiallyActive: true
       },
       {
         name: 'Tutorials',
@@ -48,6 +49,37 @@ module.exports = {
         name: `data`,
         path: `${__dirname}/src/data/`
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md", ".markdown"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
