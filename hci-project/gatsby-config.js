@@ -6,7 +6,8 @@ module.exports = {
     menuLinks: [
       {
         name: 'Home',
-        path: '/'
+        path: '/',
+        partiallyActive: false
       },
       {
         name: 'Blog',
@@ -15,7 +16,8 @@ module.exports = {
       },
       {
         name: 'Tutorials',
-        path: '/public_pages/tutorials'
+        path: '/public_pages/tutorials',
+        partiallyActive: true
       },
     ],
   },
@@ -30,6 +32,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

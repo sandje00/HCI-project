@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
           menuLinks {
             name
             path
+            partiallyActive
           }
         }
       }

@@ -10,7 +10,7 @@ const Navlinks = ({ links }) => (
     <div>
         <nav>
             <ul className={headerStyles.navbar}>
-                {links.map(({name, path}) => (
+                {links.map(({name, path, partiallyActive}) => (
                     <li
                     key={name}
                     className={headerStyles.navlinks}
@@ -18,6 +18,7 @@ const Navlinks = ({ links }) => (
                     <Link 
                         className={headerStyles.link}
                         activeClassName={headerStyles.active}
+                        partiallyActive={partiallyActive}
                         to={path}>
                         {name}
                     </Link>

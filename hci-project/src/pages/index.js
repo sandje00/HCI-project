@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { Styled } from 'theme-ui'
 
 import Layout from "../components/layout"
 import Image from "gatsby-image"
@@ -9,6 +10,7 @@ const Home = ({ data }) => (
   <Layout>
     <h1>HCI project</h1>
     <h2>Pages</h2>
+    <Styled.h2>Hello, styled heading!</Styled.h2>
 
     <ul>
       <li><Link to="/public_pages/tutorials">Tutorials</Link></li>
