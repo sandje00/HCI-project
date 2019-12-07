@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
-import BlogIndex from "../../components/blog/blog-index"
+import BlogExcerpt from "../../components/blog/blog-excerpt"
 
 const Blog = ({
   data: {
@@ -11,7 +11,7 @@ const Blog = ({
 }) => (
   <Layout>
     <h1>Blog</h1>
-    <BlogIndex posts={posts} />
+    <BlogExcerpt posts={posts} />
   </Layout>
 )
 

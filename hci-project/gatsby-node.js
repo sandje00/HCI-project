@@ -9,21 +9,9 @@
 
 const path = require(`path`)
 
-// Implement the Gatsby API “onCreatePage”. This is
-// called after every page is created.
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions
-  // page.matchPath is a special key that's used for matching pages
-  // only on the client.
-  if (page.path.match(/^\/questions/)) {
-    page.matchPath = "/questions/*"
-    // Update the page.
-    createPage(page)
-  }
-}
-
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
+  const blogList = path.resolve(`./src/templates/blog-list.js`)
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
   const {
@@ -31,8 +19,9 @@ exports.createPages = async ({ actions, graphql }) => {
       allMdx: { posts },
     },
   } = await graphql(`
-    query BlogIndex {
+    query BlogPages {
       allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
         filter: {
           fileAbsolutePath: { regex: "//src/posts//" }
           frontmatter: { published: { eq: true } }
@@ -40,30 +29,44 @@ exports.createPages = async ({ actions, graphql }) => {
       ) {
         posts: edges {
           post: node {
-            id
             frontmatter {
-              author
-              date(formatString: "MMMM DD, YYYY")
               slug
               title
             }
-            excerpt(pruneLength: 200)
           }
         }
       }
     }
   `)
 
-  posts.forEach(({ post }) => {
+  posts.forEach(({ post }, index) => {
     const { slug } = post.frontmatter
+    const previous = index === 0 ? null : posts[index - 1].post
+    const next = index === posts.length - 1 ? null : posts[index + 1].post
+
     createPage({
-      path: `public_pages/blog/${slug}`,
+      path: `/public_pages/blog/${slug}`,
       component: blogPost,
       context: {
-        // additional data can be passed via context;
-        // this will be used in the GraphQL query as
-        // an query variable
         slug,
+        previous,
+        next,
+      },
+    })
+  })
+
+  const postsPerPage = 3
+  const numPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, index) => {
+    createPage({
+      path: index === 0 ? `/public_pages/blog` : `/public_pages/blog/${index + 1}`,
+      component: blogList,
+      context: {
+        limit: postsPerPage,
+        skip: index * postsPerPage,
+        numPages,
+        currentPage: index + 1,
       },
     })
   })
