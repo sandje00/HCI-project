@@ -3,10 +3,10 @@ import { Link } from "gatsby"
 
 
 import Layout from "../../components/layout"
-import Style from "../../styles/signup-in.css"
+/* import Style from "../../styles/signup-in.css" */
 const SignUp = () => (
   <Layout>
-    <h1>Sign up</h1>
+    {/* <h1>Sign up</h1>
     
     <div className={Style.container}>
       <label for="uname"><b>Username</b></label>
@@ -27,7 +27,7 @@ const SignUp = () => (
       <button type="submit">Sign up</button>
     
    </div>
-    <Link to="/">Back to home</Link>
+    <Link to="/">Back to home</Link> */}
   </Layout>
 )
 

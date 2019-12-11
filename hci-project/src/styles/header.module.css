@@ -75,7 +75,10 @@
     font-size: 25px;
 }
 
-.link:active, .link:hover, .active {
+.link:active,
+.link:hover, 
+.active,
+.hiddenLink:hover {
     text-decoration: underline;
     color: #ffb300;
     text-decoration-color: #ffb300;
@@ -123,10 +126,31 @@
 .hiddenItems {
     display: flex;
     flex-direction: column;
+    margin-top: 150px;
+    right: 0;
+    width: 300px;
+    height: 210px;
     position: absolute;
     background-color: #ffffff;
-    /* margin-top: 70px; */
-    z-index: 999;
-    min-width: 120;
-    padding: 2;
+    
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+    outline: none;
+}
+
+.item {
+    height: 50px;
+}
+
+.item:hover {
+    background-color: #e8e8e8;
+}
+
+.hiddenLink {
+    text-decoration: none;
+    color: #303030;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: 500;
 }

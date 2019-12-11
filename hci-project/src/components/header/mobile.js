@@ -18,8 +18,8 @@ const HiddenItems = ({ links, handleOutsideClick }) => {
     return (
         <div ref={innerBorderRef} className={headerStyles.hiddenItems}>
             {links.map(({ name, path }) => (
-                <div key={name}>
-                    <Link to={path}>{name}</Link>
+                <div key={name} className={headerStyles.item}>
+                    <Link to={path} className={headerStyles.hiddenLink}>{name}</Link>
                 </div>
             ))}
         </div>

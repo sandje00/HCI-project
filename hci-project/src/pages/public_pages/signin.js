@@ -2,11 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../../components/layout"
-import Style from "../../styles/signup-in.css"
+/* import Style from "../../styles/signup-in.css" */
 
 const SignIn = () => (
   <Layout>
-    <h1>Sign in</h1>
+    {/* <h1>Sign in</h1>
 
    
 
@@ -22,7 +22,7 @@ const SignIn = () => (
     
    </div>
 
-    <Link to="/">Back to home</Link>
+    <Link to="/">Back to home</Link> */}
   </Layout>
 )
 
