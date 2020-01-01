@@ -29,7 +29,7 @@ const Navlinks = ({ links }) => (
     </div>
 )
 
-export const NotSignedIn = () => {
+const NotSignedIn = () => {
     return (
         <div className={headerStyles.buttongroup1}>
             <button className={`${headerStyles.signinout} ${headerStyles.button}`}>
@@ -48,7 +48,7 @@ export const NotSignedIn = () => {
     )
 }
 
-export const SignedIn = () => {
+const SignedIn = () => {
     return (
         <div className={headerStyles.buttongroup2}>
             <FaBookmark className={headerStyles.icons}/>

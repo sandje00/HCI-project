@@ -108,6 +108,7 @@
     color: #ffffff;
     font-size: 3em;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 .moreButton:hover, .activeMoreButton {
@@ -153,4 +154,13 @@
     margin-left: 20px;
     font-size: 22px;
     font-weight: 500;
+}
+
+.hiddenButton {
+    background-color: #c4c4c4;
+}
+
+.hiddenButtonText {
+    text-decoration: none;
+    color: #303030;
 }
