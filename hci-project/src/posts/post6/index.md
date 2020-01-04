@@ -3,6 +3,7 @@ slug: post6
 title: Post 6
 date: 2012-11-25
 author: SA
+image: './images/sample.jpeg'
 published: true
 ---
 

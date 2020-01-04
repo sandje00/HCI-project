@@ -20,7 +20,7 @@ const BlogList = ({
   
     return (
       <Layout>
-        <h1>Blog posts</h1>
+        <h1>Blog</h1>
         <BlogExcerpt posts={posts} />
   
         <BlogNav>
@@ -60,6 +60,13 @@ const BlogList = ({
               date(formatString: "MMMM DD, YYYY")
               slug
               title
+              image {
+                childImageSharp {
+                  fixed(width: 225, height: 150) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
             }
             excerpt(pruneLength: 200)
           }

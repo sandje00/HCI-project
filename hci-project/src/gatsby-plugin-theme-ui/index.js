@@ -1,11 +1,11 @@
-import { roboto } from '@theme-ui/presets'
+import { base } from '@theme-ui/presets'
 
 export default {
-  ...roboto,
+  ...base,
   styles: {
-    ...roboto.styles,
+    ...base.styles,
     h2: {
-        ...roboto.styles.h2,
+        ...base.styles.h2,
         fontSize: [3, 4, 5],
         color: "primary"
       },
