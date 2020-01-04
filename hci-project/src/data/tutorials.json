@@ -1,6 +1,8 @@
 [
     {
+        "id": "1",
         "title": "Python Crash Course",
+        "image": "../images/python.png",
         "language": "Python",
         "level": "Beginner",
         "price": "0.00",
@@ -15,7 +17,9 @@
         ]
     },
     {
+        "id": "2",
         "title": "Machine learning with Pyhton",
+        "image": "../images/mlpython.jpg",
         "language": "Python",
         "level": "Intermediate",
         "price": "20.00",
@@ -28,7 +32,9 @@
         ]
     },
     {
+        "id": "3",
         "title": "React.js tutorial",
+        "image": "../images/react.png",
         "language": "JavaScript",
         "level": "Beginner",
         "price": "10.00",
