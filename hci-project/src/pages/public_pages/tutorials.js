@@ -1,18 +1,59 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
+import { FaSearch } from "react-icons/fa"
 
 import Layout from "../../components/layout"
 import Tutorial from "../../components/tutorials/tutorial"
 
-const Tutorials = ({ data }) => (
-  <Layout>
-    <h1>Tutorials</h1>
+const Tutorials = ({ data }) => {
+  const allTutorials = data.allTutorialsJson.edges
+  const emptyQuery = ""
 
-    {data.allTutorialsJson.edges.map(({ node }) =>(
-      <Tutorial key={node.id} tutorial={node}/>
-    ))}
-  </Layout>
-)
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+    const query = event.target.value
+    const tutorials = data.allTutorialsJson.edges
+    const filteredData = tutorials.filter(tutorial => {
+      const { title } = tutorial.node
+      return (
+        title.toLowerCase().includes(query.toLowerCase())
+      )
+    })
+
+    setState({
+      query,
+      filteredData,
+    })
+
+  }
+
+  const { filteredData, query } = state
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const tutorials = hasSearchResults ? filteredData : allTutorials
+
+  return (
+      <Layout>
+        <h1>Tutorials</h1>
+
+        <label>
+            <FaSearch />
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={handleInputChange}
+            />
+        </label>
+
+        {tutorials.map(({ node }) =>(
+          <Tutorial key={node.id} tutorial={node}/>
+        ))}
+      </Layout>
+  )
+}
 
 export default Tutorials
 
