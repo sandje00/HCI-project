@@ -1,5 +1,5 @@
 import React from "react"
-/* import Link from "gatsby" */
+import { Link } from "gatsby"
 import Image from "gatsby-image"
 
 const Tutorial = ({ tutorial }) => {
@@ -19,7 +19,11 @@ const Tutorial = ({ tutorial }) => {
                 <li>Level: {level}</li>
                 <li>Price: {price}</li>
             </ul>
-            <button>More</button>
+            <button>
+                <Link to={`/public_pages/tutorials/${id}`}>
+                    More
+                </Link>
+            </button>
         </article>
     )
 }

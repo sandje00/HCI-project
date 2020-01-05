@@ -13,6 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const blogList = path.resolve(`./src/templates/blog-list.js`)
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const tutorialTemplate = path.resolve(`./src/templates/tutorial-more.js`)
 
   const {
     data: {
@@ -33,6 +34,22 @@ exports.createPages = async ({ actions, graphql }) => {
               slug
               title
             }
+          }
+        }
+      }
+    }
+  `)
+
+  const {
+    data: {
+      allTutorialsJson: { tutorials },
+    }
+  } = await graphql(`
+    query TutorialMoreQuery {
+      allTutorialsJson {
+        tutorials: edges {
+          tutorial: node {
+            id
           }
         }
       }
@@ -67,6 +84,16 @@ exports.createPages = async ({ actions, graphql }) => {
         skip: index * postsPerPage,
         numPages,
         currentPage: index + 1,
+      },
+    })
+  })
+
+  tutorials.forEach(({ tutorial }, index) => {
+    createPage({
+      path: `/public_pages/tutorials/${tutorial.id}`,
+      component: tutorialTemplate,
+      context: {
+        id: tutorial.id,
       },
     })
   })
