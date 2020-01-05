@@ -31,9 +31,29 @@ const Tutorials = ({ data }) => {
 
   }
 
+  const handleValueChange = event => {
+    const query = event.target.value
+    const tutorials = data.allTutorialsJson.edges
+    let filteredData = []
+    if(query === emptyQuery)
+      filteredData = tutorials
+    
+    filteredData = tutorials.filter(tutorial => {
+      const { level } = tutorial.node
+      return (
+        level === query
+      )
+    })
+
+    setState({
+      query,
+      filteredData,
+    })
+  }
+
   const { filteredData, query } = state
-  const hasSearchResults = filteredData && query !== emptyQuery
-  const tutorials = hasSearchResults ? filteredData : allTutorials
+  const hasResult = filteredData && query !== emptyQuery
+  const tutorials = hasResult ? filteredData : allTutorials
 
   return (
       <Layout>
@@ -47,6 +67,13 @@ const Tutorials = ({ data }) => {
               onChange={handleInputChange}
             />
         </label>
+
+        <select onChange={handleValueChange}>
+          <option value={emptyQuery}>All</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
 
         {tutorials.map(({ node }) =>(
           <Tutorial key={node.id} tutorial={node}/>
