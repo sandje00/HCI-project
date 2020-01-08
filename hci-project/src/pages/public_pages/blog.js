@@ -34,6 +34,13 @@ query Posts {
           date(formatString: "MMMM DD, YYYY")
           slug
           title
+          image {
+            childImageSharp {
+              fixed(width: 225, height: 150) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
         excerpt(pruneLength: 200)
       }
