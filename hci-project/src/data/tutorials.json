@@ -6,7 +6,6 @@
         "language": "Python",
         "level": "Beginner",
         "price": "0.00",
-        "rating": "4.70",
         "summary": [
             "Variables, Objects, Data Types (strings, lists, tuples dictionaries)",
             "Control Flow (if-else, loops and iterators)",
@@ -22,8 +21,7 @@
         "image": "../images/mlpython.jpg",
         "language": "Python",
         "level": "Intermediate",
-        "price": "20.00",
-        "rating": "5.00",
+        "price": "35.00",
         "summary": [
             "Supervised, unsupervised and reinforcement learning",
             "Regression",
@@ -33,12 +31,39 @@
     },
     {
         "id": "3",
+        "title": "Deep learning with TensorFlow",
+        "image": "../images/tensorflow.png",
+        "language": "Python",
+        "level": "Intermediate",
+        "price": "80.00",
+        "summary": [
+            "Introduction to neural networks",
+            "Introduction to TensorFlow",
+            "Feed forward neural network implementation",
+            "Convolutional neural network implementation",
+            "Using Keras"
+        ]
+    },
+    {
+        "id": "4",
+        "title": "Python Web Development",
+        "image": "../images/pyweb.png",
+        "language": "Python",
+        "level": "Advanced",
+        "price": "99.99",
+        "summary": [
+            "Working with Flask",
+            "Working with CherryPy",
+            "Working with Django"
+        ]
+    },
+    {
+        "id": "5",
         "title": "React.js tutorial",
         "image": "../images/react.png",
         "language": "JavaScript",
         "level": "Beginner",
         "price": "10.00",
-        "rating": "4.50",
         "summary": [
             "Introduction to JSX",
             "Rendering elements",
@@ -46,6 +71,90 @@
             "Lists and keys",
             "Managing state and event handling",
             "Introduction to React hooks"
+        ]
+    },
+    {
+        "id": "6",
+        "title": "Vue.js tutorial",
+        "image": "../images/vue.png",
+        "language": "JavaScript",
+        "level": "Beginner",
+        "price": "00.00",
+        "summary": [
+            "The Vue instance",
+            "Template syntax",
+            "Data binding, computed values and watchers",
+            "Components",
+            "Conditional rendering",
+            "Event handling"
+        ]
+    },
+    {
+        "id": "7",
+        "title": "Sequelize ORM",
+        "image": "../images/sequelize.png",
+        "language": "JavaScript",
+        "level": "Intermediate",
+        "price": "19.99",
+        "summary": [
+            "Installation and Setting up the Connection",
+            "Dialects",
+            "Models (data types, definition, usage)",
+            "Hooks",
+            "Associations",
+            "Querying",
+            "Transactions",
+            "Migrations",
+            "Sequelize-CLI"
+        ]
+    },
+    {
+        "id": "8",
+        "title": "Gatsby.js tutorial",
+        "image": "../images/gatsby.png",
+        "language": "JavaScript",
+        "level": "Intermediate",
+        "price": "39.99",
+        "summary": [
+            "Using Gatsby-CLI",
+            "React Concepts",
+            "Intro to Gatsby Plugins",
+            "Data in Gatsby",
+            "Gatsby Image API",
+            "Programatically Create Pages from Data",
+            "Preparing Site to Go Live"
+        ]
+    },
+    {
+        "id": "9",
+        "title": "MERN stack",
+        "image": "../images/mern.png",
+        "language": "JavaScript",
+        "level": "Advanced",
+        "price": "79.99",
+        "summary": [
+            "What is MERN",
+            "Working with React",
+            "Creating API with Node.js + Express",
+            "Using MongoDB",
+            "CRUD functionalities implementation",
+            "Authentication and authorization with JWT"
+        ]
+    },
+    {
+        "id": "10",
+        "title": "React Native tutorial",
+        "image": "../images/reactnative.png",
+        "language": "Python",
+        "level": "Advanced",
+        "price": "59.99",
+        "summary": [
+            "Basics (Components, Props, State, Style)",
+            "Building Responsive User Interfaces",
+            "Navigation with React Navigation",
+            "State Management with Redux",
+            "Handling User Input",
+            "Http requests and Interaction with DB"
         ]
     }
 ]

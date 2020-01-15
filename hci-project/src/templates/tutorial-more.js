@@ -15,7 +15,6 @@ const TutorialMore = ({ data }) => {
                 <li>Language: {tutorial.language}</li>
                 <li>Level: {tutorial.level}</li>
                 <li>Price: {tutorial.price}</li>
-                <li>Rating: {tutorial.rating}</li>
             </ul>
             <h4>Summary:</h4>
             <ul>
@@ -48,7 +47,6 @@ export const query = graphql`
                     language
                     level
                     price
-                    rating
                     summary
                 }
             }
