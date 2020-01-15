@@ -10,4 +10,8 @@ export default {
         color: "primary"
       },
   },
+  colors: {
+    primary: "#303030",
+    accent: "#ffb300"
+  },
 }
