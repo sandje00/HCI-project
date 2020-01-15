@@ -1,18 +1,15 @@
 [
     {
         "id": "1",
-        "title": "Python Crash Course",
-        "image": "../images/python.png",
+        "title": "Python Web Development",
+        "image": "../images/pyweb.png",
         "language": "Python",
-        "level": "Beginner",
-        "price": "0.00",
+        "level": "Advanced",
+        "price": "99.99",
         "summary": [
-            "Variables, Objects, Data Types (strings, lists, tuples dictionaries)",
-            "Control Flow (if-else, loops and iterators)",
-            "Functions",
-            "Object Oriented Programming",
-            "Exception handling",
-            "Modules in Python"
+            "Working with Flask",
+            "Working with CherryPy",
+            "Working with Django"
         ]
     },
     {
@@ -46,15 +43,18 @@
     },
     {
         "id": "4",
-        "title": "Python Web Development",
-        "image": "../images/pyweb.png",
+        "title": "Python Crash Course",
+        "image": "../images/python.png",
         "language": "Python",
-        "level": "Advanced",
-        "price": "99.99",
+        "level": "Beginner",
+        "price": "0.00",
         "summary": [
-            "Working with Flask",
-            "Working with CherryPy",
-            "Working with Django"
+            "Variables, Objects, Data Types (strings, lists, tuples dictionaries)",
+            "Control Flow (if-else, loops and iterators)",
+            "Functions",
+            "Object Oriented Programming",
+            "Exception handling",
+            "Modules in Python"
         ]
     },
     {

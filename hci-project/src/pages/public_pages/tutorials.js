@@ -1,6 +1,10 @@
-import React, { useState } from "react"
+/** @jsx jsx */
+
+import { useState } from "react"
 import { graphql } from "gatsby"
 import { FaSearch } from "react-icons/fa"
+import { jsx, Box } from "theme-ui"
+import { Flex } from "@theme-ui/components"
 
 import Layout from "../../components/layout"
 import Tutorial from "../../components/tutorials/tutorial"
@@ -75,9 +79,22 @@ const Tutorials = ({ data }) => {
           <option value="Advanced">Advanced</option>
         </select>
 
-        {tutorials.map(({ node }) =>(
+        <div>
+          <Flex sx={{
+            justifyContent: "flex-start",
+            flexWrap: "wrap"
+          }}>
+            {tutorials.map(({ node }) =>(
+              <Box key={node.id}>
+                <Tutorial key={node.id} tutorial={node}/>
+              </Box>
+            ))}
+          </Flex>
+        </div>
+
+        {/* {tutorials.map(({ node }) =>(
           <Tutorial key={node.id} tutorial={node}/>
-        ))}
+        ))} */}
       </Layout>
   )
 }

@@ -1,9 +1,8 @@
 /** @jsx jsx */ 
 
-import React from "react"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-import { jsx } from 'theme-ui'
+import { jsx } from "theme-ui"
 
 const Tutorial = ({ tutorial }) => {
     const { id, 
@@ -16,7 +15,9 @@ const Tutorial = ({ tutorial }) => {
     return (
         <article sx={{
             width: "250px",
-            mr: "10px",
+            height: "374px",
+            mt: "50px",
+            mr: "40px",
             boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
             border: "1px",
             borderStyle: "solid",
