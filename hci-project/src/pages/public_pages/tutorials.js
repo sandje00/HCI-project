@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { graphql } from "gatsby"
-import { FaSearch } from "react-icons/fa"
+import { FaSearch, FaFilter } from "react-icons/fa"
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 
@@ -61,23 +61,74 @@ const Tutorials = ({ data }) => {
 
   return (
       <Layout>
-        <h1>Tutorials</h1>
-
-        <label>
-            <FaSearch />
-            <input
-              type="text"
-              placeholder="Search"
-              onChange={handleInputChange}
-            />
-        </label>
-
-        <select onChange={handleValueChange}>
-          <option value={emptyQuery}>All</option>
-          <option value="Beginner">Beginner</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Advanced">Advanced</option>
-        </select>
+        <Flex sx={{
+          justifyContent: "space-between",
+          mt: "50px"
+        }}>
+          <Box>
+            <label sx={{
+              height: "35px",
+              width: "200px",
+              backgroundColor: "#ffffff",
+              border: "1px",
+              borderStyle: "solid",
+              borderColor: "#787878",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end"
+            }}>
+                <FaSearch sx={{
+                  fontSize: "1em",
+                  color: "#787878",
+                  mt: "8px",
+                  mr: "5px"
+                }}/>
+                <input
+                  type="text"
+                  placeholder="Search"
+                  onChange={handleInputChange}
+                  sx={{
+                    border: "none",
+                    heignt: "35px",
+                    width: "160px"
+                  }}
+                />
+            </label>
+          </Box>
+          <Box>
+            <label sx={{
+              height: "35px",
+              width: "200px",
+              mr: "90px",
+              backgroundColor: "#ffffff",
+              border: "1px",
+              borderStyle: "solid",
+              borderColor: "#787878",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end"
+            }}>
+                <FaFilter sx={{
+                  fontSize: "1em",
+                  color: "#787878",
+                  mt: "8px",
+                  mr: "5px"
+                }}/>
+                <select
+                  onChange={handleValueChange}
+                  sx={{
+                    border: "none",
+                    heignt: "35px",
+                    width: "160px"
+                  }}>
+                    <option value={emptyQuery}>All</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </label>
+          </Box>
+        </Flex>
 
         <div>
           <Flex sx={{
@@ -91,10 +142,6 @@ const Tutorials = ({ data }) => {
             ))}
           </Flex>
         </div>
-
-        {/* {tutorials.map(({ node }) =>(
-          <Tutorial key={node.id} tutorial={node}/>
-        ))} */}
       </Layout>
   )
 }
