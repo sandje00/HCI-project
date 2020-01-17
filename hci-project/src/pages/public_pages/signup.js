@@ -1,11 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
 
 
 import Layout from "../../components/layout"
+import ReduxTest from "../../components/redux-test"
 /* import Style from "../../styles/signup-in.css" */
 const SignUp = () => (
   <Layout>
+
+    <ReduxTest />
+
     {/* <h1>Sign up</h1>
     
     <div className={Style.container}>
