@@ -1,23 +1,37 @@
-import React from "react"
+/** @jsx jsx */
+
+import { jsx, Box } from "theme-ui"
+import { Flex } from "@theme-ui/components"
 import { Link } from "gatsby"
-import { FaShoppingCart, FaBookmark } from "react-icons/fa"
 
-import headerStyles from "../../styles/header.module.css"
+import { SignIn, SignUp, SignOut } from "./header-buttons"
+import { Bookmark, ShoppingCart } from "./header-icons"
+import style from "../../styles/header.module.css"
 
-const isUserSignedIn = false;
+const isUserSignedIn = false
 
 const Navlinks = ({ links }) => (
-    <div>
+    <div sx={{
+        paddingLeft: "100px"
+    }}>
         <nav>
-            <ul className={headerStyles.navbar}>
+            <ul sx={{
+                display: "flex",
+                flex: "1",
+                flexDirection: "row",
+                ml: "0"
+            }}>
                 {links.map(({name, path, partiallyActive}) => (
                     <li
                     key={name}
-                    className={headerStyles.navlinks}
+                    sx={{
+                        listStyleType: "none",
+                        padding: "1rem"
+                    }}
                     >
                     <Link 
-                        className={headerStyles.link}
-                        activeClassName={headerStyles.active}
+                        className={style.link}
+                        activeClassName={style.active}
                         partiallyActive={partiallyActive}
                         to={path}>
                         {name}
@@ -29,49 +43,66 @@ const Navlinks = ({ links }) => (
     </div>
 )
 
-const NotSignedIn = () => {
+export const NotSignedIn = () => {
     return (
-        <div className={headerStyles.buttongroup1}>
-            <button className={`${headerStyles.signinout} ${headerStyles.button}`}>
-                <Link
-                    to="../../public_pages/signin"
-                    className={headerStyles.blackButtonText}>
-                        Sign in</Link>
-            </button>
-            <button className={`${headerStyles.signup} ${headerStyles.button}`}>
-                <Link
-                    to="../../public_pages/signup"
-                    className={headerStyles.whiteButtonText}>
-                        Sign up</Link>
-            </button>
-        </div>
+        <Flex>
+            <Box>
+                <SignIn />
+            </Box>
+            <Box>
+                <SignUp />
+            </Box>
+        </Flex>
+    )
+}
+
+export const IconsGroup = () => {
+    return (
+        <Flex>
+            <Box>
+                <ShoppingCart />
+            </Box>
+            <Box>
+                <Bookmark />
+            </Box>
+        </Flex>
     )
 }
 
 const SignedIn = () => {
     return (
-        <div className={headerStyles.buttongroup2}>
-            <FaBookmark className={headerStyles.icons}/>
-            <FaShoppingCart className={headerStyles.icons}/>
-            <button className={`${headerStyles.signinout} ${headerStyles.button}`}>
-                <Link
-                    className={headerStyles.blackButtonText}
-                    to="../../private_pages/cart">
-                        Sign out</Link>
-            </button>
-        </div>
+        <Flex sx={{
+            mt: "10px",
+            mr: "20px"
+        }}>
+            <Box>
+                <IconsGroup />
+            </Box>
+            <Box>
+                <SignOut />
+            </Box>
+        </Flex>
     )
 }
 
 const Desktop = ({ menuLinks }) => (
-    <div className={headerStyles.desktop}>
-        <Navlinks links={menuLinks} />
-        {isUserSignedIn ? (
-            <SignedIn />
-        ) : (
-            <NotSignedIn />
-        )}
-    </div>
+    <Flex sx={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: isUserSignedIn ? "stretch" : "baseline",
+        flexGrow: "0.5"
+    }}>
+        <Box>
+            <Navlinks links={menuLinks} />
+        </Box>
+        <Box>
+            {isUserSignedIn ? (
+                <SignedIn />
+            ) : (
+                <NotSignedIn />
+            )}
+        </Box>
+    </Flex>
 )
 
 export default Desktop

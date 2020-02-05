@@ -10,13 +10,13 @@ module.exports = {
         partiallyActive: false
       },
       {
-        name: 'Blog',
-        path: '/public_pages/blog',
+        name: 'Tutorials',
+        path: '/public_pages/tutorials',
         partiallyActive: true
       },
       {
-        name: 'Tutorials',
-        path: '/public_pages/tutorials',
+        name: 'Blog',
+        path: '/public_pages/blog',
         partiallyActive: true
       },
     ],
