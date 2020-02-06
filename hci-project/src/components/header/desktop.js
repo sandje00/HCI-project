@@ -3,6 +3,7 @@
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 import { Link } from "gatsby"
+import { useWindowWidth } from '@react-hook/window-size'
 
 import { SignIn, SignUp, SignOut } from "./header-buttons"
 import { Bookmark, ShoppingCart } from "./header-icons"
@@ -57,8 +58,13 @@ export const NotSignedIn = () => {
 }
 
 export const IconsGroup = () => {
+    let width = useWindowWidth()
+    let condition = width < 960
+
     return (
-        <Flex>
+        <Flex sx={{
+            mr: condition ? "20px" : "0px"
+        }}>
             <Box>
                 <ShoppingCart />
             </Box>

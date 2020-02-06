@@ -1,72 +1,48 @@
-import React, {useState} from "react"
+/** @jsx jsx */
+
+import { jsx, Box } from "theme-ui"
+import { Flex, Divider } from "@theme-ui/components"
+import { useState } from "react"
 import { Link } from "gatsby"
-import { FaShoppingCart, FaBookmark, FaBars } from "react-icons/fa"
+import { FaBars } from "react-icons/fa"
 
+import { NotSignedIn, IconsGroup } from "./desktop"
+import { SignOut } from "./header-buttons"
 import { useOnOutsideEvent } from "../../hooks"
-import headerStyles from "../../styles/header.module.css"
+import style from "../../styles/header.module.css"
 
-const isUserSignedIn = false;
+const isUserSignedIn = false
 
 const MoreButton = ({ onClick }) => (
-    <FaBars className={headerStyles.moreButton} onClick={onClick}/>
+    <FaBars className={style.moreButton} onClick={onClick}/>
 )
-
-const NotSignedIn = () => {
-    return (
-        <div className={headerStyles.buttongroup1}>
-            <button className={`${headerStyles.button} ${headerStyles.hiddenButton}`}>
-                <Link
-                    to="../../public_pages/signin"
-                    className={headerStyles.hiddenButtonText}>
-                        Sign in</Link>
-            </button>
-            <button className={`${headerStyles.button} ${headerStyles.hiddenButton}`}>
-                <Link
-                    to="../../public_pages/signup"
-                    className={headerStyles.hiddenButtonText}>
-                        Sign up</Link>
-            </button>
-        </div>
-    )
-}
-
-const SignOut = () => {
-    return (
-        <div>
-            <button className={`${headerStyles.button} ${headerStyles.hiddenButton}`}>
-                <Link
-                    className={headerStyles.hiddenButtonText}
-                    to="../../">
-                        Sign out</Link>
-            </button>
-        </div>
-    )
-}
 
 const HiddenItems = ({ links, handleOutsideClick }) => {
     const { innerBorderRef } = useOnOutsideEvent(handleOutsideClick)
 
     return (
-        <div ref={innerBorderRef} className={headerStyles.hiddenItems}>
+        <div ref={innerBorderRef} className={style.hiddenItems}>
             {links.map(({ name, path }) => (
-                <div key={name} className={headerStyles.item}>
-                    <Link to={path} className={headerStyles.hiddenLink}>{name}</Link>
+                <div key={name} className={style.item}>
+                    <Link to={path} className={style.hiddenLink}>{name}</Link>
+                    <Divider sx={{
+                        color: "#cccccc",
+                        mt: "15px !important",
+                        width: "320px",
+                        margin: "0 auto"
+                    }}/>
                 </div>
             ))}
-            {isUserSignedIn ? (
-                <SignOut />
-            ) : (
-                <NotSignedIn />
-            )}
-        </div>
-    )
-}
-
-const SignedIn = () => {
-    return (
-        <div className={headerStyles.buttongroup2}>
-            <FaBookmark className={headerStyles.icons}/>
-            <FaShoppingCart className={headerStyles.icons}/>
+            <div sx={{
+                margin: "0 auto",
+                paddingTop: "20px"
+            }}>
+                {isUserSignedIn ? (
+                    <SignOut />
+                ) : (
+                    <NotSignedIn />
+                )}
+            </div>
         </div>
     )
 }
@@ -78,11 +54,23 @@ const Mobile = ({ menuLinks }) => {
     const handleOutsideClick = () => setOpen(false)
 
     return (
-        <div className={headerStyles.mobdiv}>
-            {isUserSignedIn && <SignedIn />}
-            <MoreButton onClick={handleMoreClick} />
-            {open && <HiddenItems links={menuLinks} handleOutsideClick={handleOutsideClick} />}
-        </div>
+        <Flex sx={{
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            mt: "7px",
+            mr: "10px"
+        }}>
+            {isUserSignedIn &&
+                <Box>
+                    <IconsGroup />
+                </Box>
+            }
+            <Box>
+                <MoreButton onClick={handleMoreClick} />
+                {open && <HiddenItems links={menuLinks} handleOutsideClick={handleOutsideClick} />}
+            </Box>
+        </Flex>
     )
 }
 

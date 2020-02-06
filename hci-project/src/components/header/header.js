@@ -49,7 +49,7 @@ const Header = ({ menuLinks }) => {
           <LogoLink />
         </Box>
         <Box sx={{ flexGrow: "2" }}>
-          {width > 576 ? (
+          {width > 960 ? (
             <Desktop menuLinks={menuLinks} />
           ) : (
             <Mobile menuLinks={menuLinks} />
