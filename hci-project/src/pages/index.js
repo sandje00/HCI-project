@@ -1,9 +1,11 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { Styled } from 'theme-ui'
+/** @jsx jsx */
+
+import { jsx } from "theme-ui"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Welcome from "../components/homepage/welcome"
+import Trending from "../components/homepage/trending"
 /* import SEO from "../components/seo" */
 
 const Home = ({ data }) => {
@@ -11,6 +13,16 @@ const Home = ({ data }) => {
   return (
     <Layout>
       <Welcome picture={picture}/>
+      <h1 sx={{
+        display: "flex ",
+        flexDirection: "row",
+        justifyContent: "center",
+        mt: "100px !important",
+        mb: "50px !important"
+      }}>
+        Trending
+      </h1>
+      <Trending />
     </Layout>
   )
 }

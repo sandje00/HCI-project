@@ -1,0 +1,27 @@
+[
+    {
+        "id": "2",
+        "title": "Machine learning with Pyhton",
+        "image": "../images/mlpython.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Python Crash Course",
+        "image": "../images/python.png"
+    },
+    {
+        "id": "5",
+        "title": "React.js tutorial",
+        "image": "../images/react.png"
+    },
+    {
+        "id": "8",
+        "title": "Gatsby.js tutorial",
+        "image": "../images/gatsby.png"
+    },
+    {
+        "id": "9",
+        "title": "MERN stack",
+        "image": "../images/mern.png"
+    }
+]
