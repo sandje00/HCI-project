@@ -3,36 +3,23 @@ import { Link, graphql } from "gatsby"
 import { Styled } from 'theme-ui'
 
 import Layout from "../components/layout"
-import Image from "gatsby-image"
+import Welcome from "../components/homepage/welcome"
 /* import SEO from "../components/seo" */
 
-const Home = ({ data }) => (
-  <Layout>
-    <h1>HCI project</h1>
-    <h2>Pages</h2>
-    <Styled.h2>Hello, styled heading!</Styled.h2>
-
-    <ul>
-      <li><Link to="/public_pages/tutorials">Tutorials</Link></li>
-      <li><Link to="/public_pages/blog">Blog</Link></li>
-      <li><Link to="/public_pages/signin">Sign in</Link></li>
-      <li><Link to="/public_pages/signup">Sign up</Link></li>
-    </ul>
-    
-    {/* <Image fluid={data.allFile.edges[0].node.childImageSharp.fluid} /> */}
-
-    {data.allFile.edges.map(({node})=> ( 
-      <Image key={node.id} fluid={node.childImageSharp.fluid} /> 
-    ))}
-
-  </Layout>
-)
+const Home = ({ data }) => {
+  const picture = data.allFile.edges[0].node
+  return (
+    <Layout>
+      <Welcome picture={picture}/>
+    </Layout>
+  )
+}
 
 export default Home
 
 export const query = graphql`
 {
-    allFile(filter: {absolutePath: {regex: "//src/images//"}}) {
+    allFile(filter: {absolutePath: {regex: "//src/images/homepage//"}}) {
       edges {
         node {
           id
