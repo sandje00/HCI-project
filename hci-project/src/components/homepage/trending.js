@@ -1,12 +1,10 @@
 /** @jsx jsx */
 
 import { jsx } from "theme-ui"
-import { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import ItemsCarousel from "react-items-carousel"
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa"
+import Carousel from 'react-carousel'
 
-import CarouselItem from "../tutorials/carousel-item"
+require("react-carousel/lib/carousel.css")
 
 const Trending = () => {
     const data = useStaticQuery(graphql`
@@ -19,7 +17,7 @@ const Trending = () => {
                         image {
                             childImageSharp {
                                 fluid(maxWidth: 400) {
-                                    ...GatsbyImageSharpFluid_tracedSVG
+                                    src
                                 }
                             }
                         }
@@ -30,27 +28,6 @@ const Trending = () => {
     `)
 
     const trending = data.allTrendingJson.edges
-    const [activeItemIndex, setActiveItemIndex] = useState(0)
-    const chevronWidth = 40;
-
-    return (
-        <div sx={{ padding: `0 ${chevronWidth}px` }}>
-            <ItemsCarousel
-                requestToChangeActive={setActiveItemIndex}
-                activeItemIndex={activeItemIndex}
-                numberOfCards={1}
-                gutter={20}
-                leftChevron={<FaArrowCircleLeft sx={{ fontSize: "1.5em" }}/>}
-                rightChevron={<FaArrowCircleRight sx={{ fontSize: "1.5em" }}/>}
-                outsideChevron
-                chevronWidth={chevronWidth}
-            >
-                {trending.map(({ node }) => (
-                    <CarouselItem key={node.id} tutorial={node}/>
-                ))}
-            </ItemsCarousel>
-        </div>
-    )
 }
 
 export default Trending
