@@ -4,6 +4,7 @@ import { jsx } from "theme-ui"
 import { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ItemsCarousel from "react-items-carousel"
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa"
 
 import CarouselItem from "../tutorials/carousel-item"
 
@@ -39,8 +40,8 @@ const Trending = () => {
                 activeItemIndex={activeItemIndex}
                 numberOfCards={1}
                 gutter={20}
-                leftChevron={<button>{'<'}</button>}
-                rightChevron={<button>{'>'}</button>}
+                leftChevron={<FaArrowCircleLeft sx={{ fontSize: "1.5em" }}/>}
+                rightChevron={<FaArrowCircleRight sx={{ fontSize: "1.5em" }}/>}
                 outsideChevron
                 chevronWidth={chevronWidth}
             >
