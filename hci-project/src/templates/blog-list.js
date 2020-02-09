@@ -1,4 +1,6 @@
-import React from "react"
+/** @jsx jsx */
+
+import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -20,7 +22,15 @@ const BlogList = ({
   
     return (
       <Layout>
-        <h1>Blog</h1>
+        <h1 sx={{
+          display: "flex ",
+          flexDirection: "row",
+          justifyContent: "center",
+          mt: "100px !important",
+          mb: "50px !important" 
+        }}>
+          Blog
+        </h1>
         <BlogExcerpt posts={posts} />
   
         <BlogNav>

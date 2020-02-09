@@ -24,7 +24,8 @@ export default ({ posts }) => {
         sx={{
           flexDirection: condition ? "column" : "row",
           justifyContent: "space-around",
-          alignItems: condition ? "stretch" : "center"
+          alignItems: condition ? "stretch" : "center",
+          mt: "50px"
         }}
       >
         {condition &&
