@@ -15,12 +15,12 @@ export default ({ pageContext, data }) => {
       <MDXRenderer>{post.body}</MDXRenderer>
       <div>
         {previous && (
-          <Link to={`public_pages/blog/${previous.frontmatter.slug}`}>
+          <Link to={`blog/${previous.frontmatter.slug}`}>
             Previous: {previous.frontmatter.title}
           </Link>
         )}
         {next && (
-          <Link to={`public_pages/blog/${next.frontmatter.slug}`}>
+          <Link to={`blog/${next.frontmatter.slug}`}>
             Next: {next.frontmatter.title}
           </Link>
         )}

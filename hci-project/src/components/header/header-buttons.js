@@ -13,7 +13,7 @@ export const SignIn = () => (
         backgroundColor: "primary",
         border: "2px solid #ffffff"
     }}>
-        <Link to="../../public_pages/signin"
+        <Link to="../../signin"
             sx={{
                 color: "#ffffff",
                 textDecoration: "none",
@@ -58,7 +58,7 @@ export const SignUp = () => (
         backgroundColor: "#ffffff",
         textDecorationColor: "#000000"
     }}>
-        <Link to="../../public_pages/signup"
+        <Link to="../../signup"
             sx={{
                 color: "#000000",
                 textDecoration: "none",

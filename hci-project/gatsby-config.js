@@ -11,12 +11,12 @@ module.exports = {
       },
       {
         name: 'Tutorials',
-        path: '/public_pages/tutorials',
+        path: '/tutorials',
         partiallyActive: true
       },
       {
         name: 'Blog',
-        path: '/public_pages/blog',
+        path: '/blog',
         partiallyActive: true
       },
     ],

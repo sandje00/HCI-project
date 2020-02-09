@@ -62,7 +62,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const next = index === posts.length - 1 ? null : posts[index + 1].post
 
     createPage({
-      path: `/public_pages/blog/${slug}`,
+      path: `/blog/${slug}`,
       component: blogPost,
       context: {
         slug,
@@ -77,7 +77,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   Array.from({ length: numPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? `/public_pages/blog` : `/public_pages/blog/${index + 1}`,
+      path: index === 0 ? `/blog` : `/blog/${index + 1}`,
       component: blogList,
       context: {
         limit: postsPerPage,
@@ -90,7 +90,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   tutorials.forEach(({ tutorial }, index) => {
     createPage({
-      path: `/public_pages/tutorials/${tutorial.id}`,
+      path: `/tutorials/${tutorial.id}`,
       component: tutorialTemplate,
       context: {
         id: tutorial.id,

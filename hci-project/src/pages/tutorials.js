@@ -6,8 +6,8 @@ import { FaSearch, FaFilter } from "react-icons/fa"
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 
-import Layout from "../../components/layout"
-import Tutorial from "../../components/tutorials/tutorial"
+import Layout from "../components/layout"
+import Tutorial from "../components/tutorials/tutorial"
 
 const Tutorials = ({ data }) => {
   const allTutorials = data.allTutorialsJson.edges

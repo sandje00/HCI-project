@@ -8,7 +8,7 @@ import style from "../../styles/header.module.css"
 
 export const Bookmark = () => {
     const handleBookmarkClick = () => {
-        navigate("../../private_pages/bookmarks")
+        navigate("../../bookmarks")
     }
 
     return (
@@ -21,7 +21,7 @@ export const Bookmark = () => {
 
 export const ShoppingCart = () => {
     const handleCartClick = () => {
-        navigate("../../private_pages/cart")
+        navigate("../../cart")
     }
     
     return (

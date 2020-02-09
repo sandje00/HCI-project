@@ -12,7 +12,7 @@ export default ({ posts }) => {
     const { title, slug, image } = post.frontmatter
 
     const handleMoreClick = () => {
-      navigate(`public_pages/blog/${slug}`)
+      navigate(`/blog/${slug}`)
     }
 
     let width = useWindowWidth()

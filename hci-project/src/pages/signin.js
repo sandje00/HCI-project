@@ -1,7 +1,7 @@
 import React from "react"
 
-import Layout from "../../components/layout"
-import SignInForm from "../../components/forms/sign-in-form"
+import Layout from "../components/layout"
+import SignInForm from "../components/forms/sign-in-form"
 
 const SignIn = () => (
   <Layout>

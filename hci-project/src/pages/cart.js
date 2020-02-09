@@ -1,15 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../../components/layout"
+import Layout from "../components/layout"
 
 /* import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo" */
 
-const Bookmarks = () => (
+const Cart = () => (
   <Layout>
-    <h1>Bookmarks</h1>
+    <h1>Cart</h1>
 
     <ul>
       <li><Link to="/public_pages/tutorials">Tutorials</Link></li>
@@ -22,4 +22,4 @@ const Bookmarks = () => (
   </Layout>
 )
 
-export default Bookmarks
+export default Cart

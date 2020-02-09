@@ -61,7 +61,7 @@ const Tutorial = ({ tutorial }) => {
                 textAlign: "center"
             }}>
                 <Link 
-                    to={`/public_pages/tutorials/${id}`}
+                    to={`/tutorials/${id}`}
                     sx={{
                         color: "#000000",
                         textDecoration: "none",

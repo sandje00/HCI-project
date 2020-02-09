@@ -15,8 +15,8 @@ const BlogList = ({
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const previousPage =
-      currentPage - 1 === 1 ? "public_pages/blog/" : `public_pages/blog/${(currentPage - 1).toString()}`
-    const nextPage = `public_pages/blog/${(currentPage + 1).toString()}`
+      currentPage - 1 === 1 ? "blog/" : `blog/${(currentPage - 1).toString()}`
+    const nextPage = `blog/${(currentPage + 1).toString()}`
   
     return (
       <Layout>
