@@ -64,13 +64,16 @@ const Tutorials = ({ data }) => {
       <Layout>
         <SEO title="Tutorials"/>
         <Flex sx={{
-          justifyContent: "space-between",
-          mt: "50px"
+          justifyContent: "center",
+          flexWrap: "wrap",
+          mt: "50px",
+          mr: "0px"
         }}>
           <Box>
             <label sx={{
               height: "35px",
               width: "200px",
+              ml: "43px",
               backgroundColor: "#ffffff",
               border: "1px",
               borderStyle: "solid",
@@ -97,11 +100,12 @@ const Tutorials = ({ data }) => {
                 />
             </label>
           </Box>
+          <Box sx={{ flexGrow: "1" }}></Box>
           <Box>
             <label sx={{
               height: "35px",
               width: "200px",
-              mr: "90px",
+              mr: "43px",
               backgroundColor: "#ffffff",
               border: "1px",
               borderStyle: "solid",
@@ -134,8 +138,9 @@ const Tutorials = ({ data }) => {
 
         <div>
           <Flex sx={{
-            justifyContent: "flex-start",
-            flexWrap: "wrap"
+            justifyContent: "space-evenly",
+            flexWrap: "wrap",
+            margin: "0 auto"
           }}>
             {tutorials.map(({ node }) =>(
               <Box key={node.id}>
