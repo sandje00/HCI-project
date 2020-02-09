@@ -3,12 +3,14 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const TutorialMore = ({ data }) => {
     const tutorial = data.allTutorialsJson.edges[0].node
     
     return (
         <Layout>
+            <SEO title={tutorial.title}/>
             <Image fluid={tutorial.image.childImageSharp.fluid} />
             <h2>{tutorial.title}</h2>
             <ul>

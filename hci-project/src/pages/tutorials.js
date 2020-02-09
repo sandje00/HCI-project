@@ -7,6 +7,7 @@ import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Tutorial from "../components/tutorials/tutorial"
 
 const Tutorials = ({ data }) => {
@@ -61,6 +62,7 @@ const Tutorials = ({ data }) => {
 
   return (
       <Layout>
+        <SEO title="Tutorials"/>
         <Flex sx={{
           justifyContent: "space-between",
           mt: "50px"

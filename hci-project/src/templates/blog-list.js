@@ -4,6 +4,7 @@ import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import BlogExcerpt from "../components/blog/blog-excerpt"
 import BlogNav from "../components/blog/blog-navigation"
   
@@ -22,6 +23,7 @@ const BlogList = ({
   
     return (
       <Layout>
+        <SEO title="Blog"/>
         <h1 sx={{
           display: "flex ",
           flexDirection: "row",

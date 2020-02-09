@@ -4,14 +4,15 @@ import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Welcome from "../components/homepage/welcome"
 /* import Trending from "../components/homepage/trending" */
-/* import SEO from "../components/seo" */
 
 const Home = ({ data }) => {
   const picture = data.allFile.edges[0].node
   return (
     <Layout>
+      <SEO title="Home"/>
       <Welcome picture={picture}/>
       <h1 sx={{
         display: "flex ",

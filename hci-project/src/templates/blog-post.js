@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default ({ pageContext, data }) => {
   const { post } = data
@@ -10,6 +11,7 @@ export default ({ pageContext, data }) => {
 
   return (
     <Layout>
+      <SEO title={post.frontmatter.title}/>
       <h4>{post.frontmath4}</h4>
       <span>{post.frontmatter.date}</span>
       <MDXRenderer>{post.body}</MDXRenderer>
