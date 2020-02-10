@@ -65,15 +65,17 @@ const Tutorials = ({ data }) => {
         <SEO title="Tutorials"/>
         <Flex sx={{
           justifyContent: "center",
+          flexDirection: ["column", "row", "row"],
           flexWrap: "wrap",
           mt: "50px",
-          mr: "0px"
+          mr: "0px",
+          ml: ["70px", "0px", "0px"]
         }}>
           <Box>
             <label sx={{
               height: "35px",
               width: "200px",
-              ml: "43px",
+              ml: ["0px", "78px", "43px"],
               backgroundColor: "#ffffff",
               border: "1px",
               borderStyle: "solid",
@@ -105,7 +107,8 @@ const Tutorials = ({ data }) => {
             <label sx={{
               height: "35px",
               width: "200px",
-              mr: "43px",
+              mr: ["0px", "78px" ,"43px"],
+              mt: ["20px", "0px", "0px"],
               backgroundColor: "#ffffff",
               border: "1px",
               borderStyle: "solid",
