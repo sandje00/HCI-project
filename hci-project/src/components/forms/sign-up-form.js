@@ -1,76 +1,95 @@
 /** @jsx jsx */
 
-import { jsx } from "theme-ui"
+import { jsx, Box } from "theme-ui"
+import { Flex } from "@theme-ui/components"
 
 const SignUpForm = () => {
     return (
-        <div>
-            <form sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "flex-start"
-            }}>
-                <label sx={{
+        <Flex sx={{  
+            justifyContent: "center",
+            flexDirection: "column"
+        }}>
+            <Box />
+            <Box sx={{ flex: "1" }}>
+                <form sx={{
                     display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
-                    alignItems: "center",
-                    width: "400px",
-                    mb: "20px"
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "flex-start",
+                    maxWidth: "400px"
                 }}>
-                    <span sx={{ mr: "15px" }}>Username:</span>
-                    <input type="text"/>
-                </label>
-                <label sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
-                    alignItems: "center",
-                    width: "400px",
-                    mb: "20px"
+                    <label sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                        alignItems: "left",
+                        width: ["310px", "400px", "400px"]
+                    }}>
+                        <span sx={{ fontSize: "1.2em" }}>
+                            Username <span sx={{ color: "red" }}>*</span>
+                        </span>
+                        <input type="text" sx={{ height: "40px" }}/>
+                    </label>
+                    <label sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                        alignItems: "left",
+                        width: ["310px", "400px", "400px"],
+                        mt: "30px"
+                    }}>
+                        <span sx={{ fontSize: "1.2em" }}>
+                            Email address <span sx={{ color: "red" }}>*</span>
+                        </span>
+                        <input type="email" sx={{ height: "40px" }}/>
+                    </label>
+                    <label sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                        alignItems: "left",
+                        width: ["310px", "400px", "400px"],
+                        mt: "30px"
+                    }}>
+                        <span sx={{ fontSize: "1.2em" }}>
+                            Password <span sx={{ color: "red" }}>*</span>
+                        </span>
+                        <input type="password" sx={{ height: "40px" }}/>
+                    </label>
+                    <label sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                        alignItems: "left",
+                        width: ["310px", "400px", "400px"],
+                        mt: "30px"
+                    }}>
+                        <span sx={{ fontSize: "1.2em" }}>
+                            Repeat password <span sx={{ color: "red" }}>*</span>
+                        </span>
+                        <input type="password" sx={{ height: "40px" }}/>
+                    </label>
+                </form>
+            </Box>
+            <Box>
+                <button sx={{
+                    backgroundColor: "accent",
+                    borderRadius: "10px",
+                    borderStyle: "none",
+                    height: "50px",
+                    width: "150px",
+                    textAlign: "center",
+                    textColor: "#000000",
+                    cursor: "pointer",
+                    fontSize: "1.2em",
+                    ml: ["100px", "120px", "120px"],
+                    mt: "30px"
                 }}>
-                    <span sx={{ mr: "15px" }}>Email:</span>
-                    <input type="email"/>
-                </label>
-                <label sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
-                    alignItems: "center",
-                    width: "400px",
-                    mb: "20px"
-                }}>
-                    <span sx={{ mr: "15px" }}>Password:</span>
-                    <input type="password"/>
-                </label>
-                <label sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
-                    alignItems: "center",
-                    width: "400px",
-                    mb: "20px"
-                }}>
-                    <span sx={{ mr: "15px" }}>Repeat password:</span>
-                    <input type="password"/>
-                </label>
-            </form>
-            <button sx={{
-                ml: "160px",
-                backgroundColor: "accent",
-                borderRadius: "10px",
-                borderStyle: "none",
-                height: "40px",
-                width: "100px",
-                textAlign: "center",
-                textColor: "#000000",
-                cursor: "pointer",
-                fontSize: "20px"
-            }}>
-                Submit
-            </button>
-        </div>
+                    Submit
+                </button>
+            </Box>
+            <Box />
+        </Flex>
     )
 }
 
