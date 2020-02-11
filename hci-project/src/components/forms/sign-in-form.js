@@ -5,49 +5,55 @@ import { Flex } from "@theme-ui/components"
 
 const SignInForm = () => {
     return (
-        <Flex>
+        <Flex sx={{  
+            justifyContent: "center",
+            flexDirection: "column"
+        }}>
             <Box />
             <Box sx={{ flex: "1" }}>
                 <form sx={{
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    alignItems: "flex-start"
+                    alignItems: "flex-start",
+                    maxWidth: "400px"
                 }}>
                     <label sx={{
                         display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "flex-end",
-                        alignItems: "center",
-                        width: "400px",
-                        mb: "20px"
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                        alignItems: "left",
+                        width: ["310px", "400px", "400px"]
                     }}>
-                        <span sx={{ mr: "15px" }}>Username:</span>
-                        <input type="text"/>
+                        <span sx={{ fontSize: "1.2em" }}>Username:</span>
+                        <input type="text" sx={{ height: "40px" }}/>
                     </label>
                     <label sx={{
                         display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "flex-end",
-                        alignItems: "center",
-                        width: "400px",
-                        mb: "20px"
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                        alignItems: "left",
+                        width: ["310px", "400px", "400px"],
+                        mt: "30px"
                     }}>
-                        <span sx={{ mr: "15px" }}>Password:</span>
-                        <input type="password"/>
+                        <span sx={{ fontSize: "1.2em" }}>Password:</span>
+                        <input type="password" sx={{ height: "40px" }}/>
                     </label>
                 </form>
+            </Box>
+            <Box>
                 <button sx={{
-                    ml: "160px",
                     backgroundColor: "accent",
                     borderRadius: "10px",
                     borderStyle: "none",
-                    height: "40px",
-                    width: "100px",
+                    height: "50px",
+                    width: "150px",
                     textAlign: "center",
                     textColor: "#000000",
                     cursor: "pointer",
-                    fontSize: "20px"
+                    fontSize: "1.2em",
+                    ml: ["100px", "120px", "120px"],
+                    mt: "30px"
                 }}>
                     Submit
                 </button>
