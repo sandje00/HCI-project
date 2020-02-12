@@ -1,7 +1,7 @@
-import { INCREMENT } from "./types"
+import { SIGNIN } from "./types"
 
-export const increment = () => {
+export const signin = () => {
     return ({
-        type: INCREMENT
+        type: SIGNIN
     })
 }

@@ -3,6 +3,8 @@
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 
+import Submit from "./submit"
+
 const SignUpForm = () => {
     return (
         <Flex sx={{  
@@ -72,21 +74,7 @@ const SignUpForm = () => {
                 </form>
             </Box>
             <Box>
-                <button sx={{
-                    backgroundColor: "accent",
-                    borderRadius: "10px",
-                    borderStyle: "none",
-                    height: "50px",
-                    width: "150px",
-                    textAlign: "center",
-                    textColor: "#000000",
-                    cursor: "pointer",
-                    fontSize: "1.2em",
-                    ml: ["100px", "120px", "120px"],
-                    mt: "30px"
-                }}>
-                    Submit
-                </button>
+                <Submit />
             </Box>
             <Box />
         </Flex>

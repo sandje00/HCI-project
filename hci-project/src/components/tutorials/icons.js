@@ -3,6 +3,8 @@
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 import { FaShoppingCart, FaBookmark } from "react-icons/fa"
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
 
 const CartButton = () => (
     <button sx={{
@@ -44,7 +46,7 @@ const BookmarkButton = () => (
     </button>
 )
 
-const Icons = () => {
+const Icons = ( isUserSignedIn ) => {
     return (
         <Flex sx={{
             flexDirection: ["row", "column", "column"],
@@ -52,14 +54,30 @@ const Icons = () => {
             mt: ["25px", "0px", "0px"],
             mr: ["0px", "0px", "200px"]
         }}>
-            <Box>
-                <CartButton />
-            </Box>
-            <Box>
-                <BookmarkButton />
-            </Box>
+            {isUserSignedIn ? (
+                <Box>
+                    <CartButton />
+                </Box>
+            ) : (
+                <Box></Box>
+            )}
+            {isUserSignedIn ? (
+                <Box>
+                    <BookmarkButton />
+                </Box>
+            ) : (
+                <Box></Box>
+            )}
         </Flex>
     )
 }
 
-export default Icons
+Icons.propTypes = {
+    isUserSignedIn: PropTypes.bool.isRequired
+}
+
+const mapStateToProps = ({ isUserSignedIn }) => {
+    return { isUserSignedIn }
+}
+
+export default connect(mapStateToProps)(Icons)

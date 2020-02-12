@@ -4,12 +4,12 @@ import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 import { Link } from "gatsby"
 import { useWindowWidth } from '@react-hook/window-size'
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
 
 import { SignIn, SignUp, SignOut } from "./header-buttons"
 import { Bookmark, ShoppingCart } from "./header-icons"
 import style from "../../styles/header.module.css"
-
-const isUserSignedIn = false
 
 const Navlinks = ({ links }) => (
     <div sx={{
@@ -91,7 +91,7 @@ const SignedIn = () => {
     )
 }
 
-const Desktop = ({ menuLinks }) => (
+const Desktop = ({ menuLinks, isUserSignedIn }) => (
     <Flex sx={{
         flexDirection: "row",
         justifyContent: "space-between",
@@ -111,4 +111,13 @@ const Desktop = ({ menuLinks }) => (
     </Flex>
 )
 
-export default Desktop
+Desktop.propTypes = {
+    menuLinks: PropTypes.array.isRequired,
+    isUserSignedIn: PropTypes.bool.isRequired
+}
+
+const mapStateToProps = ({ isUserSignedIn }) => {
+    return { isUserSignedIn }
+}
+
+export default connect(mapStateToProps)(Desktop)

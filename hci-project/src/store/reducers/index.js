@@ -1,12 +1,12 @@
-import { INCREMENT } from "../actions/types"
+import { SIGNIN } from "../actions/types"
 
-const reducer = (state, action) => {
-  if (action.type === INCREMENT) {
+const signin = (state, action) => {
+  if (action.type === SIGNIN) {
     return Object.assign({}, state, {
-      count: state.count + 1,
+      isUserSignedIn: true
     })
   }
   return state
 }
 
-export default reducer
+export default signin

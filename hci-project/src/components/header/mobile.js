@@ -5,19 +5,23 @@ import { Flex, Divider } from "@theme-ui/components"
 import { useState } from "react"
 import { Link } from "gatsby"
 import { FaBars } from "react-icons/fa"
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
 
 import { NotSignedIn, IconsGroup } from "./desktop"
 import { SignOut } from "./header-buttons"
 import { useOnOutsideEvent } from "../../hooks"
 import style from "../../styles/header.module.css"
 
-const isUserSignedIn = false
-
 const MoreButton = ({ onClick }) => (
     <FaBars className={style.moreButton} onClick={onClick}/>
 )
 
-const HiddenItems = ({ links, handleOutsideClick }) => {
+const mapStateToProps = ({ isUserSignedIn }) => {
+    return { isUserSignedIn }
+}
+
+const HiddenItems = ({ links, handleOutsideClick, isUserSignedIn }) => {
     const { innerBorderRef } = useOnOutsideEvent(handleOutsideClick)
 
     return (
@@ -47,7 +51,15 @@ const HiddenItems = ({ links, handleOutsideClick }) => {
     )
 }
 
-const Mobile = ({ menuLinks }) => {
+HiddenItems.propTypes = {
+    links: PropTypes.array.isRequired,
+    handleOutsideClick: PropTypes.func.isRequired,
+    isUserSignedIn: PropTypes.bool.isRequired
+}
+
+const ConnectedItems = connect(mapStateToProps)(HiddenItems)
+
+const Mobile = ({ menuLinks, isUserSignedIn }) => {
     const [open, setOpen] = useState(false)
 
     const handleMoreClick = () => setOpen(true)
@@ -68,10 +80,15 @@ const Mobile = ({ menuLinks }) => {
             }
             <Box>
                 <MoreButton onClick={handleMoreClick} />
-                {open && <HiddenItems links={menuLinks} handleOutsideClick={handleOutsideClick} />}
+                {open && <ConnectedItems links={menuLinks} handleOutsideClick={handleOutsideClick} />}
             </Box>
         </Flex>
     )
 }
 
-export default Mobile
+Mobile.propTypes = {
+    menuLinks: PropTypes.array.isRequired,
+    isUserSignedIn: PropTypes.bool.isRequired
+}
+
+export default connect(mapStateToProps)(Mobile)
