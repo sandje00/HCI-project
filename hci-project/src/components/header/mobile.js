@@ -23,7 +23,7 @@ const mapStateToProps = ({ isUserSignedIn }) => {
 
 const HiddenItems = ({ links, handleOutsideClick, isUserSignedIn }) => {
     const { innerBorderRef } = useOnOutsideEvent(handleOutsideClick)
-
+    
     return (
         <div ref={innerBorderRef} className={style.hiddenItems}>
             {links.map(({ name, path }) => (

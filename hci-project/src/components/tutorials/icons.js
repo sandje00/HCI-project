@@ -46,7 +46,7 @@ const BookmarkButton = () => (
     </button>
 )
 
-const Icons = ( isUserSignedIn ) => {
+const Icons = ({ isUserSignedIn }) => {
     return (
         <Flex sx={{
             flexDirection: ["row", "column", "column"],
