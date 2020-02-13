@@ -34,8 +34,8 @@ Submit.propTypes = {
     signin: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = ({ isUserSignedIn }) => {
-    return { isUserSignedIn }
+const mapStateToProps = (state) => {
+    return { isUserSignedIn: state.isUserSignedIn }
 }
 
 export default connect(mapStateToProps, { signin })(Submit)
