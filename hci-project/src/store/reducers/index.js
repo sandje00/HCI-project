@@ -1,4 +1,7 @@
-import { SIGNIN, SIGNOUT } from "../actions/types"
+import { 
+  SIGNIN, 
+  SIGNOUT,
+  ADD_TO_CART } from "../actions/types"
 
 const reducer = (state, action) => {
   if (action.type === SIGNIN) {
@@ -9,6 +12,12 @@ const reducer = (state, action) => {
   if (action.type === SIGNOUT) {
     return Object.assign({}, state, {
       isUserSignedIn: false
+    })
+  }
+  if (action.type === ADD_TO_CART) {
+    
+    return Object.assign({}, state, {
+      cart: action.payload
     })
   }
   return state

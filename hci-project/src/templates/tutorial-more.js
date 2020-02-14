@@ -11,6 +11,11 @@ import Icons from "../components/tutorials/icons"
 
 const TutorialMore = ({ data }) => {
     const tutorial = data.allTutorialsJson.edges[0].node
+    const dummy = {
+        id: tutorial.id,
+        image: tutorial.image,
+        price: tutorial.price
+    }
     
     return (
         <Layout>
@@ -50,7 +55,7 @@ const TutorialMore = ({ data }) => {
                     </Flex>
                 </Box>
                 <Box>
-                    <Icons />
+                    <Icons tutorial={dummy}/>
                 </Box>
             </Flex>
             

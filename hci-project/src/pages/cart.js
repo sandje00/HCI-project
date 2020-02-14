@@ -1,27 +1,58 @@
-import React from "react"
-import { Link } from "gatsby"
+/** @jsx jsx */
+
+import { jsx, Box } from "theme-ui"
+import { Flex, Divider } from "@theme-ui/components"
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import CartItem from "../components/tutorials/cart-item"
 
-/* import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo" */
+const Cart = ({ cart }) => {
+  console.log(cart)
+  return (
+    <Layout>
+      <SEO title="Cart"/>
+      <h1>Cart</h1>
+      {cart && 
+        <Flex sx={{
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "center"
+        }}>
+          {cart.map( tutorial => (
+            <Box key={tutorial.id}>
+              <CartItem tutorial={tutorial}/>
+            </Box>
+          ))}
+        </Flex>}
+      <Divider />
+      <Flex sx={{
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center"
+      }}>
+        <Box>
+          <span>Total:</span>
+        </Box>
+        <Box>
+          <span>$0.00</span>
+        </Box>
+        <Box>
+          <button>Buy</button>
+        </Box>
+      </Flex>
+    </Layout>
+  )
+}
 
-const Cart = () => (
-  <Layout>
-    <SEO title="Cart"/>
-    <h1>Cart</h1>
+Cart.propTypes = {
+  cart: PropTypes.array.isRequired
+}
 
-    <ul>
-      <li><Link to="/public_pages/tutorials">Tutorials</Link></li>
-      <li><Link to="/public_pages/blog">Blog</Link></li>
-    </ul>
+const mapStateToProps = (state) => {
+  return { cart: state.cart }
+}
 
-    <h2>
-      <Link to="/">Home</Link>
-    </h2>
-  </Layout>
-)
-
-export default Cart
+export default connect(mapStateToProps)(Cart)

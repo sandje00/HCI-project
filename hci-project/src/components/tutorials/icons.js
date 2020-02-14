@@ -2,30 +2,11 @@
 
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
-import { FaShoppingCart, FaBookmark } from "react-icons/fa"
+import { FaBookmark } from "react-icons/fa"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
-const CartButton = () => (
-    <button sx={{
-        backgroundColor: "accent",
-        borderRadius: "10px",
-        borderStyle: "none",
-        height: "50px",
-        width: "50px",
-        textAlign: "center",
-        mb: ["0px", "50px", "50px"],
-        mr: ["50px", "0px", "0px"]
-    }}>
-        <FaShoppingCart 
-            sx={{
-                color: "#000000",
-                fontSize: "2em",
-                mt: "7px"
-            }}
-        />
-    </button>
-)
+import CartButton from "./cart-button"
 
 const BookmarkButton = () => (
     <button sx={{
@@ -46,7 +27,7 @@ const BookmarkButton = () => (
     </button>
 )
 
-const Icons = ({ isUserSignedIn }) => {
+const Icons = ({ isUserSignedIn, tutorial }) => {
     return (
         <Flex sx={{
             flexDirection: ["row", "column", "column"],
@@ -56,7 +37,7 @@ const Icons = ({ isUserSignedIn }) => {
         }}>
             {isUserSignedIn ? (
                 <Box>
-                    <CartButton />
+                    <CartButton tutorial={tutorial}/>
                 </Box>
             ) : (
                 <Box></Box>
@@ -73,11 +54,12 @@ const Icons = ({ isUserSignedIn }) => {
 }
 
 Icons.propTypes = {
-    isUserSignedIn: PropTypes.bool.isRequired
+    isUserSignedIn: PropTypes.bool.isRequired,
+    tutorial: PropTypes.object.isRequired
 }
 
-const mapStateToProps = ({ isUserSignedIn }) => {
-    return { isUserSignedIn }
+const mapStateToProps = (state) => {
+    return { isUserSignedIn: state.isUserSignedIn }
 }
 
 export default connect(mapStateToProps)(Icons)
