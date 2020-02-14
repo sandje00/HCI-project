@@ -3,6 +3,33 @@
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 import Image from "gatsby-image"
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
+
+import { unbookmark } from "../../store/actions"
+
+const Button = ({ bookmarks, unbookmark, id }) => {
+    const handleRemoveBookmark = () => {
+        unbookmark(id, bookmarks)
+    }
+
+    return (
+        <button onClick={handleRemoveBookmark}>
+            Remove
+        </button>
+    )
+}
+
+Button.propTypes = {
+    bookmarks: PropTypes.array.isRequired,
+    unbookmark: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired
+}
+const mapStateToProps = (state) => {
+    return { bookmarks: state.bookmarks }
+}
+
+const Remove = connect(mapStateToProps, { unbookmark })(Button)
 
 const BookmarksItem = ({ tutorial }) => {
     return (
@@ -37,7 +64,7 @@ const BookmarksItem = ({ tutorial }) => {
                     <button>Add to cart</button>
                 </Box>
                 <Box>
-                    <button>Remove</button>
+                    <Remove id={tutorial.id}/>
                 </Box>
             </Flex>
         </article>

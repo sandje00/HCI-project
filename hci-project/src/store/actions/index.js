@@ -3,7 +3,8 @@ import {
     SIGNOUT,
     ADD_TO_CART,
     REMOVE_FROM_CART,
-    BOOKMARK } from "./types"
+    BOOKMARK,
+    UNBOOKMARK } from "./types"
 
 export const signin = () => {
     return ({
@@ -37,6 +38,14 @@ export const bookmark = (tutorial, bookmarks) => {
     bookmarks.push(tutorial)
     return ({
         type: BOOKMARK,
+        payload: bookmarks
+    })
+}
+
+export const unbookmark = (id, bookmarks) => {
+    bookmarks = bookmarks.filter(i => i.id !== id)
+    return ({
+        type: UNBOOKMARK,
         payload: bookmarks
     })
 }

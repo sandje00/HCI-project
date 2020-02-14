@@ -3,7 +3,8 @@ import {
   SIGNOUT,
   ADD_TO_CART,
   REMOVE_FROM_CART,
-  BOOKMARK } from "../actions/types"
+  BOOKMARK,
+  UNBOOKMARK } from "../actions/types"
 
 const reducer = (state, action) => {
   if (action.type === SIGNIN) {
@@ -27,6 +28,11 @@ const reducer = (state, action) => {
     })
   }
   if (action.type === BOOKMARK) {
+    return Object.assign({}, state, {
+      bookmarks: action.payload
+    })
+  }
+  if (action.type === UNBOOKMARK) {
     return Object.assign({}, state, {
       bookmarks: action.payload
     })
