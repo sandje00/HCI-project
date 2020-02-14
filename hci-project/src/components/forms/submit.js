@@ -3,14 +3,21 @@
 import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
+import { navigate } from "@reach/router"
 
 import { signin } from "../../store/actions"
 
 const Submit = ({ isUserSignedIn, signin }) => {
     console.log("isUserSignedIn: " + isUserSignedIn)
+
+    const handleSubmit = () => {
+        signin()
+        navigate("/")
+    }
+
     return (
         <button 
-            onClick={signin}
+            onClick={handleSubmit}
             sx={{
                 backgroundColor: "accent",
                 borderRadius: "10px",
@@ -31,7 +38,7 @@ const Submit = ({ isUserSignedIn, signin }) => {
 
 Submit.propTypes = {
     isUserSignedIn: PropTypes.bool.isRequired,
-    signin: PropTypes.func.isRequired,
+    signin: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
