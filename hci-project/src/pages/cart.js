@@ -23,7 +23,7 @@ const Cart = ({ cart }) => {
         }}>
           {cart.map( tutorial => (
             <Box key={tutorial.id}>
-              <CartItem tutorial={tutorial}/>
+              <CartItem key={tutorial.id} tutorial={tutorial}/>
             </Box>
           ))}
         </Flex>}

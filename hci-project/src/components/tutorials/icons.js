@@ -2,30 +2,11 @@
 
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
-import { FaBookmark } from "react-icons/fa"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
 import CartButton from "./cart-button"
-
-const BookmarkButton = () => (
-    <button sx={{
-        backgroundColor: "accent",
-        borderRadius: "10px",
-        borderStyle: "none",
-        height: "50px",
-        width: "50px",
-        textAlign: "center"
-    }}>
-        <FaBookmark 
-            sx={{
-                color: "#000000",
-                fontSize: "2em",
-                mt: "7px"
-            }}
-        />
-    </button>
-)
+import BookmarkButton from "./bookmark-button"
 
 const Icons = ({ isUserSignedIn, tutorial }) => {
     return (
@@ -44,7 +25,7 @@ const Icons = ({ isUserSignedIn, tutorial }) => {
             )}
             {isUserSignedIn ? (
                 <Box>
-                    <BookmarkButton />
+                    <BookmarkButton tutorial={tutorial}/>
                 </Box>
             ) : (
                 <Box></Box>

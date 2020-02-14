@@ -4,7 +4,8 @@ import reducer from "./reducers"
 
 const initialState = { 
     isUserSignedIn: false,
-    cart: []
+    cart: [],
+    bookmarks: []
 }
 
 const createStore = () => reduxCreateStore(reducer, initialState)

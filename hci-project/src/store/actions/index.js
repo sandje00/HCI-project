@@ -2,7 +2,8 @@ import {
     SIGNIN, 
     SIGNOUT,
     ADD_TO_CART,
-    REMOVE_FROM_CART } from "./types"
+    REMOVE_FROM_CART,
+    BOOKMARK } from "./types"
 
 export const signin = () => {
     return ({
@@ -29,5 +30,13 @@ export const removeFromCart = (id, cart) => {
     return ({
         type: REMOVE_FROM_CART,
         payload: cart
+    })
+}
+
+export const bookmark = (tutorial, bookmarks) => {
+    bookmarks.push(tutorial)
+    return ({
+        type: BOOKMARK,
+        payload: bookmarks
     })
 }
