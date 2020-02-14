@@ -4,6 +4,33 @@ import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
+
+import { removeFromCart } from "../../store/actions"
+
+const Button = ({ cart, removeFromCart, id }) => {
+    const handleRemoveCart = () => {
+        removeFromCart(id, cart)
+    }
+
+    return (
+        <button onClick={handleRemoveCart}>
+            Remove
+        </button>
+    )
+}
+
+Button.propTypes = {
+    cart: PropTypes.array.isRequired,
+    removeFromCart: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired
+}
+const mapStateToProps = (state) => {
+    return { cart: state.cart }
+}
+
+const RemoveButton = connect(mapStateToProps, { removeFromCart })(Button)
 
 const CartItem = ({ tutorial }) => {
     return (
@@ -29,7 +56,7 @@ const CartItem = ({ tutorial }) => {
                 </Link>
             </Box>
             <Box>
-                <button>Remove</button>
+                <RemoveButton id={tutorial.id}/>
             </Box>
         </Flex>
     )

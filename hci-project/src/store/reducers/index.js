@@ -1,7 +1,8 @@
 import { 
   SIGNIN, 
   SIGNOUT,
-  ADD_TO_CART } from "../actions/types"
+  ADD_TO_CART,
+  REMOVE_FROM_CART } from "../actions/types"
 
 const reducer = (state, action) => {
   if (action.type === SIGNIN) {
@@ -15,7 +16,11 @@ const reducer = (state, action) => {
     })
   }
   if (action.type === ADD_TO_CART) {
-    
+    return Object.assign({}, state, {
+      cart: action.payload
+    })
+  }
+  if (action.type === REMOVE_FROM_CART) {
     return Object.assign({}, state, {
       cart: action.payload
     })
