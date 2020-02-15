@@ -19,9 +19,12 @@ const Welcome = ({ picture }) => {
                 <Image fluid={picture.childImageSharp.fluid}/>
             </Box>
             <Box>
-                <p sx={{ textAlign: "center", fontSize: ["1.2em", "1.4em", "1.5em"] }}>
-                    Do you want to learn something new or improve your development skills?
-                    Choose from our large collection of tutorials at any level.
+                <p sx={{ 
+                    textAlign: "center", 
+                    fontSize: ["1.2em", "1.4em", "1.5em"],
+                    lineHeight: "120%"
+                }}>
+                    Learn something new or improve your development skills from our large collection of tutorials at any level.
                 </p>
             </Box>
             <Box sx={{ margin: "0 auto" }}>

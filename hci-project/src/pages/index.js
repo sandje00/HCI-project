@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Welcome from "../components/homepage/welcome"
-/* import Trending from "../components/homepage/trending" */
+import Trending from "../components/homepage/trending"
 
 const Home = ({ data }) => {
   const picture = data.allFile.edges[0].node
@@ -23,7 +23,7 @@ const Home = ({ data }) => {
       }}>
         Trending
       </h1>
-      {/* <Trending /> */}
+      <Trending />
     </Layout>
   )
 }
