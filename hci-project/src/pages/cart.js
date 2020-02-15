@@ -14,7 +14,15 @@ const Cart = ({ cart }) => {
   return (
     <Layout>
       <SEO title="Cart"/>
-      <h1>Cart</h1>
+      <h1 sx={{
+        display: "flex ",
+        flexDirection: "row",
+        justifyContent: "center",
+        mt: "100px !important",
+        mb: "50px !important"
+      }}>
+        Cart
+      </h1>
       {cart && 
         <Flex sx={{
           flexDirection: "column",
@@ -29,18 +37,33 @@ const Cart = ({ cart }) => {
         </Flex>}
       <Divider />
       <Flex sx={{
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center"
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        mr: "60px"
       }}>
         <Box>
-          <span>Total:</span>
+          <span sx={{ fontSize: "1.5em", mr: "30px" }}>
+            <b>Total:</b>
+          </span>
         </Box>
         <Box>
-          <span>$0.00</span>
+          <span sx={{ fontSize: "1.5em", mr: "40px" }}>
+            <b>$0.00</b>
+          </span>
         </Box>
         <Box>
-          <button>Buy</button>
+          <button sx={{
+            borderRadius: "10px",
+            borderStyle: "none",
+            backgroundColor: "accent",
+            height: "60px",
+            width: "80px",
+            textAlign: "center",
+            fontSize: "1.2em"
+          }}>
+            <b>Buy</b>
+          </button>
         </Box>
       </Flex>
     </Layout>

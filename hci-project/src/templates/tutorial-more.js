@@ -13,6 +13,7 @@ const TutorialMore = ({ data }) => {
     const tutorial = data.allTutorialsJson.edges[0].node
     const dummy = {
         id: tutorial.id,
+        title: tutorial.title,
         image: tutorial.image,
         price: tutorial.price
     }

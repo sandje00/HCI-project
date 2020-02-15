@@ -2,10 +2,10 @@
 
 import { jsx, Box } from "theme-ui"
 import { Flex } from "@theme-ui/components"
-import { Link } from "gatsby"
 import Image from "gatsby-image"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
+import { navigate } from "@reach/router"
 
 import { removeFromCart } from "../../store/actions"
 
@@ -15,7 +15,17 @@ const Button = ({ cart, removeFromCart, id }) => {
     }
 
     return (
-        <button onClick={handleRemoveCart}>
+        <button 
+            onClick={handleRemoveCart}
+            sx={{
+                borderRadius: "10px",
+                borderStyle: "none",
+                backgroundColor: "secondary",
+                height: "40px",
+                width: "80px",
+                cursor: "pointer"
+            }}
+        >
             Remove
         </button>
     )
@@ -33,30 +43,54 @@ const mapStateToProps = (state) => {
 const RemoveButton = connect(mapStateToProps, { removeFromCart })(Button)
 
 const CartItem = ({ tutorial }) => {
+    const handleMoreClick = () => {
+        navigate(`/tutorials/${tutorial.id}`)
+    }
+
     return (
         <Flex sx={{
             flexDirection: "row",
             justifyContent: "space-between",
-            alignItems: "center"
+            alignItems: "center",
+            width: "800px",
+            mb: "30px"
         }}>
             <Box>
-                <Link 
-                    to={`/tutorials/${tutorial.id}`}
-                    sx={{ display: "flex", alignItems: "center" }}
-                >
-                    <Image
-                        fluid={tutorial.image.childImageSharp.fluid}
-                        sx={{ maxWidth: "150px" }}
-                    />
-                </Link>
+                <Flex sx={{ 
+                    flexDirection: "row", 
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    flexWrap: "wrap"
+                }}>
+                    <Box sx={{ width: "100%", maxWidth: "150px" }}>
+                        <Image
+                            fluid={tutorial.image.childImageSharp.fluid}
+                            sx={{ width: "150px", cursor: "pointer" }}
+                            onClick={handleMoreClick}
+                        />
+                    </Box>
+                    <Box>
+                        <span onClick={handleMoreClick} sx={{ fontSize: "1.2em", ml: "25px", cursor: "pointer" }}>
+                            {tutorial.title}
+                        </span>
+                    </Box>
+                </Flex>
             </Box>
             <Box>
-                <Link to={`/tutorials/${tutorial.id}`}>
-                    <span>{tutorial.title}</span>
-                </Link>
-            </Box>
-            <Box>
-                <RemoveButton id={tutorial.id}/>
+                <Flex sx={{ 
+                    flexDirection: "row", 
+                    justifyContent: "flex-end",
+                    alignItems: "center"
+                }}>
+                    <Box>
+                        <span sx={{ fontSize: "1.2em", mr: "50px" }}>
+                            ${tutorial.price}
+                        </span>
+                    </Box>
+                    <Box>
+                        <RemoveButton id={tutorial.id}/>
+                    </Box>
+                </Flex>
             </Box>
         </Flex>
     )
