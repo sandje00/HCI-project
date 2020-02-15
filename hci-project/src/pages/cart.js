@@ -40,7 +40,7 @@ const Cart = ({ cart }) => {
         flexDirection: "row",
         justifyContent: "flex-end",
         alignItems: "center",
-        mr: "60px"
+        margin: ["0 auto", null, "0px 60px 0px 0px"]
       }}>
         <Box>
           <span sx={{ fontSize: "1.5em", mr: "30px" }}>

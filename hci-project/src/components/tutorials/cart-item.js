@@ -52,14 +52,15 @@ const CartItem = ({ tutorial }) => {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
-            width: "800px",
+            width: ["350px", null, "800px"],
             mb: "30px"
         }}>
             <Box>
                 <Flex sx={{ 
-                    flexDirection: "row", 
-                    justifyContent: "flex-end",
+                    flexDirection: ["column", null, "row"], 
+                    justifyContent: ["flex-start", null, "flex-end"],
                     alignItems: "center",
+                    alignContent: ["center", null, null],
                     flexWrap: "wrap"
                 }}>
                     <Box sx={{ width: "100%", maxWidth: "150px" }}>
@@ -70,7 +71,14 @@ const CartItem = ({ tutorial }) => {
                         />
                     </Box>
                     <Box>
-                        <span onClick={handleMoreClick} sx={{ fontSize: "1.2em", ml: "25px", cursor: "pointer" }}>
+                        <span 
+                            onClick={handleMoreClick} 
+                            sx={{ 
+                                fontSize: "1.2em", 
+                                ml: [null, null, "25px"], 
+                                cursor: "pointer",
+                                textAlign: ["center", null, null]                                
+                        }}>
                             {tutorial.title}
                         </span>
                     </Box>
@@ -83,7 +91,7 @@ const CartItem = ({ tutorial }) => {
                     alignItems: "center"
                 }}>
                     <Box>
-                        <span sx={{ fontSize: "1.2em", mr: "50px" }}>
+                        <span sx={{ fontSize: "1.2em", mr: ["25px", null, "50px"] }}>
                             ${tutorial.price}
                         </span>
                     </Box>
