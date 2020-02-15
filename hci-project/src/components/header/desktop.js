@@ -13,7 +13,8 @@ import style from "../../styles/header.module.css"
 
 const Navlinks = ({ links }) => (
     <div sx={{
-        paddingLeft: "100px"
+        paddingLeft: "100px",
+        ml: "5%"
     }}>
         <nav>
             <ul sx={{

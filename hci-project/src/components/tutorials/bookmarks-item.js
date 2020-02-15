@@ -73,7 +73,7 @@ const BookmarksItem = ({ tutorial }) => {
                 </Box>
                 <Box sx={{ width: "100%", maxWidth: "204px", maxHeight: "120px" }}>
                     <Image 
-                        fluid={tutorial.image.childImageSharp.fluid}
+                        fixed={tutorial.image.childImageSharp.fixed}
                         sx={{ width: "204px", height: "120" }}
                     />
                 </Box>

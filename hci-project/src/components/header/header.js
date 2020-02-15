@@ -15,10 +15,10 @@ const LogoLink = () => (
     <img
       src={logo}
       sx={{
-        height: "50px",
-        width: "177px",
-        mt: "5px",
-        ml: "10px"
+        height: "42px",
+        width: "150px",
+        mt: "10px",
+        ml: "15px"
       }}
     />
   </Link>

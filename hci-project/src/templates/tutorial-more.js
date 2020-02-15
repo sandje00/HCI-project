@@ -86,6 +86,9 @@ export const query = graphql`
                             fluid(maxWidth: 300) {
                                 ...GatsbyImageSharpFluid_tracedSVG
                             }
+                            fixed(width: 204, height: 120) {
+                                ...GatsbyImageSharpFixed
+                            }
                         }
                     }
                     language
