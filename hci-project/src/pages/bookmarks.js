@@ -14,7 +14,15 @@ const Bookmarks = ({ bookmarks }) => {
   return (
     <Layout>
       <SEO title="Bookmarks"/>
-      <h1>Bookmarks</h1>
+      <h1 sx={{
+        display: "flex ",
+        flexDirection: "row",
+        justifyContent: "center",
+        mt: "100px !important",
+        mb: "50px !important"
+      }}>
+        Bookmarks
+      </h1>
       <div>
         {bookmarks &&
           <Flex sx={{
