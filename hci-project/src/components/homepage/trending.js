@@ -5,7 +5,6 @@ import { Flex } from "@theme-ui/components"
 import { useStaticQuery, graphql, navigate } from "gatsby"
 import Image from "gatsby-image"
 import { useState } from "react"
-import { naviagte } from "@reach/router"
 
 const Trending = () => {
     const data = useStaticQuery(graphql`

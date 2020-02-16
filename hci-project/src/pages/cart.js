@@ -8,9 +8,11 @@ import { connect } from "react-redux"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CartItem from "../components/tutorials/cart-item"
+import { getTotal } from "../store/actions"
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, total, getTotal }) => {
   console.log(cart)
+  getTotal(total, cart)
   return (
     <Layout>
       <SEO title="Cart"/>
@@ -49,7 +51,7 @@ const Cart = ({ cart }) => {
         </Box>
         <Box>
           <span sx={{ fontSize: "1.5em", mr: "40px" }}>
-            <b>$0.00</b>
+            <b>${total.toFixed(2)}</b>
           </span>
         </Box>
         <Box>
@@ -71,11 +73,13 @@ const Cart = ({ cart }) => {
 }
 
 Cart.propTypes = {
-  cart: PropTypes.array.isRequired
+  cart: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
+  getTotal: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
-  return { cart: state.cart }
+  return { cart: state.cart, total: state.total }
 }
 
-export default connect(mapStateToProps)(Cart)
+export default connect(mapStateToProps, { getTotal })(Cart)

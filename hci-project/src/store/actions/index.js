@@ -4,7 +4,8 @@ import {
     ADD_TO_CART,
     REMOVE_FROM_CART,
     BOOKMARK,
-    UNBOOKMARK } from "./types"
+    UNBOOKMARK,
+    GET_TOTAL } from "./types"
 
 export const signin = () => {
     return ({
@@ -47,5 +48,13 @@ export const unbookmark = (id, bookmarks) => {
     return ({
         type: UNBOOKMARK,
         payload: bookmarks
+    })
+}
+
+export const getTotal = (total, cart) => {
+    total = cart.reduce((r, d) => r + parseFloat(d.price), 0.00)
+    return ({
+        type: GET_TOTAL,
+        payload: total
     })
 }
