@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "title": "Python Web Development",
+        "title": "Python Web Dev",
         "image": "../images/pyweb.png",
         "language": "Python",
         "level": "Advanced",
@@ -14,7 +14,7 @@
     },
     {
         "id": "2",
-        "title": "Machine learning with Pyhton",
+        "title": "ML with Pyhton",
         "image": "../images/mlpython.jpg",
         "language": "Python",
         "level": "Intermediate",
@@ -28,7 +28,7 @@
     },
     {
         "id": "3",
-        "title": "Deep learning with TensorFlow",
+        "title": "NNs with TensorFlow",
         "image": "../images/tensorflow.png",
         "language": "Python",
         "level": "Intermediate",
@@ -155,6 +155,179 @@
             "State Management with Redux",
             "Handling User Input",
             "Http requests and Interaction with DB"
+        ]
+    },
+    {
+        "id": "11",
+        "title": "C# Fundamentals",
+        "image": "../images/cs.png",
+        "language": "C#",
+        "level": "Beginner",
+        "price": "11.99",
+        "summary": [
+            "Variables, Data Types and Type Casting",
+            "Conditions and Loops",
+            "Functions in C#",
+            "C# Classes, Objects and Methods",
+            "Inheritance and Polymorphism"
+        ]
+    },
+    {
+        "id": "12",
+        "title": "WPF tutorial",
+        "image": "../images/wpf.png",
+        "language": "C#",
+        "level": "Intermediate",
+        "price": "28.99",
+        "summary": [
+            "Intro to Visual Studio",
+            "Working with XAML",
+            "Elements Tree",
+            "Dependency Properties",
+            "Routed Events",
+            "Controls",
+            "Layouts and Nesting Layouts",
+            "Data Binding",
+            "Templates"
+        ]
+    },
+    {
+        "id": "13",
+        "title": "ASP .NET tutorial",
+        "image": "../images/asp.jpg",
+        "language": "C#",
+        "level": "Intermediate",
+        "price": "49.99",
+        "summary": [
+            "MVC pattern",
+            "Life cycle",
+            "Event Handling",
+            "Server Side and Server Controls",
+            "HTML Server",
+            "Client Side",
+            "DB access"
+        ]
+    },
+    {
+        "id": "14",
+        "title": "Java Crash Course",
+        "image": "../images/java.png",
+        "language": "Java",
+        "level": "Beginner",
+        "price": "14.99",
+        "summary": [
+            "Variables, Data Types and Operators",
+            "Booleans, Conditions and Loops",
+            "Functions",
+            "Classes, Objects and Methods",
+            "Inheritance and Polymorphism"
+        ]
+    },
+    {
+        "id": "15",
+        "title": "Java for Android",
+        "image": "../images/android.jpg",
+        "language": "Java",
+        "level": "Intermediate",
+        "price": "59.99",
+        "summary": [
+            "Using Android Studio",
+            "OOP in Java",
+            "Building UI",
+            "DB access"
+        ]
+    },
+    {
+        "id": "16",
+        "title": "Java Backend",
+        "image": "../images/javabackend.jpg",
+        "language": "Java",
+        "level": "Advanced",
+        "price": "79.99",
+        "summary": [
+            "Java Basic Concepts",
+            "OOP in Java",
+            "Java Collections (ArrayList, LinkedList, HashMap...)",
+            "File Handling",
+            "Multithreading",
+            "DB Creation and Connection",
+            "Intro to Spring framework"
+        ]
+    },
+    {
+        "id": "17",
+        "title": "PHP Fundamentals",
+        "image": "../images/php.jpg",
+        "language": "PHP",
+        "level": "Beginner",
+        "price": "9.99",
+        "summary": [
+            "Variable Types and Constants",
+            "Decision Making and Loop Types",
+            "Arrays and Strings",
+            "Intro to Web",
+            "GET and POST",
+            "Files and File Inclusion",
+            "Functions",
+            "Cookies",
+            "Sessions"
+        ]
+    },
+    {
+        "id": "18",
+        "title": "Laravel",
+        "image": "../images/laravel.png",
+        "language": "PHP",
+        "level": "Intermediate",
+        "price": "39.99",
+        "summary": [
+            "MVC pattern",
+            "Application Structure",
+            "Routing",
+            "Middleware",
+            "Namespaces",
+            "Controllers",
+            "Request",
+            "Cookies",
+            "Response",
+            "Views",
+            "Working with DB",
+            "AJAX"
+        ]
+    },
+    {
+        "id": "19",
+        "title": "Symfony tutorial",
+        "image": "../images/symfony.png",
+        "language": "PHP",
+        "level": "Advanced",
+        "price": "129.99",
+        "summary": [
+            "Architecture and Components",
+            "Service Container",
+            "Events and Event Listener",
+            "Controllers",
+            "Routing",
+            "Doctrine ORM",
+            "File Uploading",
+            "Ajax Control"
+        ]
+    },
+    {
+        "id": "20",
+        "title": "SQL for Beginners",
+        "image": "../images/sql.png",
+        "language": "SQL",
+        "level": "Beginner",
+        "price": "29.99",
+        "summary": [
+            "Intro to syntax",
+            "Select and Select Distinct",
+            "Where",
+            "Order By, Like, And, Or, Not",
+            "Insert Into",
+            "Delete",
+            "Joins (Inner, Outer, Left, Right)"
         ]
     }
 ]
