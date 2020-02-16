@@ -73,7 +73,10 @@ const Trending = () => {
                         <Box key={index} sx={{ width: "100%", maxWidth: "150px", margin: "10px" }}>
                             <Image 
                                 fixed={node.image.childImageSharp.fixed}
-                                sx={{ width: "150px", cursor: "pointer" }}
+                                sx={{ 
+                                    width: "150px", 
+                                    cursor: "pointer"
+                                }}
                                 onClick={e => setNumber(index)}
                             />
                         </Box>

@@ -4,33 +4,47 @@ import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { FaBookmark } from "react-icons/fa"
+import { useState } from "react"
 
-import { bookmark } from "../../store/actions"
+import { bookmark, unbookmark } from "../../store/actions"
 
 const BookmarkButton = ({ tutorial, bookmarks }) => {
-    let isBookmarked = bookmarks.includes(tutorial)
+    const [added, setAdded] = useState(JSON.stringify(bookmarks).includes(JSON.stringify(tutorial)))
     const handleBookmarkClick = () => {
-        bookmark(tutorial, bookmarks)
-        isBookmarked = !isBookmarked
+        if(added) {
+            unbookmark(tutorial.id, bookmarks)
+            setAdded(false)
+        }
+        else {
+            bookmark(tutorial, bookmarks)
+            setAdded(true)
+        }
     }
 
     return (
         <button 
             onClick={handleBookmarkClick}
             sx={{
-                backgroundColor: isBookmarked ? "secondary" : "accent",
+                backgroundColor: added ? "secondary" : "accent",
                 borderRadius: "10px",
                 borderStyle: "none",
                 height: "50px",
-                width: "50px",
-                textAlign: "center"
+                width: "150px",
+                textAlign: "center",
+                cursor: "pointer",
+                mt: "20px"
             }}
         >
+            <span sx={{
+                color: added ? "primary" : "#000000"
+            }}>
+                Bookmark
+            </span>
             <FaBookmark 
                 sx={{
-                    color: isBookmarked ? "primary" : "#000000",
-                    fontSize: "2em",
-                    mt: "7px"
+                    color: added ? "primary" : "#000000",
+                    fontSize: "1em",
+                    ml: "5px"
                 }}
             />
         </button>
@@ -46,4 +60,4 @@ const mapStateToProps = (state) => {
     return { bookmarks: state.bookmarks }
 }
 
-export default connect(mapStateToProps, { bookmark })(BookmarkButton)
+export default connect(mapStateToProps, { bookmark, unbookmark })(BookmarkButton)

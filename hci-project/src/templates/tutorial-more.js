@@ -22,7 +22,7 @@ const TutorialMore = ({ data }) => {
         <Layout>
             <SEO title={tutorial.title}/>
             <Flex sx={{
-                justifyContent: "space-between",
+                justifyContent: "flex-start",
                 alignItems: "center",
                 flexDirection: ["column", "row", "row"],
                 flexWrap: "wrap"
@@ -30,10 +30,10 @@ const TutorialMore = ({ data }) => {
                 <Box sx={{ width: "100%", maxWidth: "250px" }}>
                     <Image 
                         fluid={tutorial.image.childImageSharp.fluid}
-                        sx = {{ maxWidth: "300px",  }}
+                        sx = {{ maxWidth: "300px" }}
                     />
                 </Box>
-                <Box sx={{ flexGrow: "0.5" }}>
+                <Box sx={{ flexGrow: "0.5", ml: ["0px", "20px", "40px"] }}>
                     <Flex sx={{
                         flexDirection: "column",
                         maxWidth: "400px"
@@ -55,12 +55,11 @@ const TutorialMore = ({ data }) => {
                         </Box>
                     </Flex>
                 </Box>
-                <Box>
-                    <Icons tutorial={dummy}/>
-                </Box>
             </Flex>
+
+            <Icons tutorial={dummy}/>
             
-            <h4 sx={{ mt: "50px" }}>Summary:</h4>
+            <h4 sx={{ mt: "40px" }}>Summary:</h4>
             <ul>
                 {tutorial.summary.map(
                     (item, index) => <li key={index}>{item}</li>

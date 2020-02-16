@@ -11,10 +11,10 @@ import BookmarkButton from "./bookmark-button"
 const Icons = ({ isUserSignedIn, tutorial }) => {
     return (
         <Flex sx={{
-            flexDirection: ["row", "column", "column"],
-            justifyContent: ["space-around", "center", "center"],
-            mt: ["25px", "0px", "0px"],
-            mr: ["0px", "0px", "200px"]
+            flexDirection: "row",
+            justifyContent: "space-around",
+            maxWidth: "400px",
+            margin: "0 auto"
         }}>
             {isUserSignedIn ? (
                 <Box>

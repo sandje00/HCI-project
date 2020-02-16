@@ -4,35 +4,47 @@ import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { FaShoppingCart } from "react-icons/fa"
+import { useState } from "react"
 
-import { addToCart } from "../../store/actions"
+import { addToCart, removeFromCart } from "../../store/actions"
 
 const CartButton = ({ cart, tutorial }) => {
-    let isInCart = cart.includes(tutorial)
+    const [added, setAdded] = useState(JSON.stringify(cart).includes(JSON.stringify(tutorial)))
     const handleCartClick = () => {
-        addToCart(tutorial, cart)
-        isInCart = !isInCart
+        if(added) {
+            removeFromCart(tutorial.id, cart)
+            setAdded(false)
+        }
+        else {
+            addToCart(tutorial, cart)
+            setAdded(true)
+        }
     }
 
     return (
         <button 
             onClick={handleCartClick}
             sx={{
-                backgroundColor: isInCart ? "secondary" : "accent",
+                backgroundColor: added ? "secondary" : "accent",
                 borderRadius: "10px",
                 borderStyle: "none",
                 height: "50px",
-                width: "50px",
+                width: "150px",
                 textAlign: "center",
-                mb: ["0px", "50px", "50px"],
-                mr: ["50px", "0px", "0px"]
+                cursor: "pointer",
+                mt: "20px"
             }}
         >
+            <span sx={{
+                color: added ? "primary" : "#000000"
+            }}>
+                Add to cart
+            </span>
             <FaShoppingCart 
                 sx={{
-                    color: isInCart ? "primary" : "#000000",
-                    fontSize: "2em",
-                    mt: "7px"
+                    color: added ? "primary" : "#000000",
+                    fontSize: "1em",
+                    ml: "5px"
                 }}
             />
         </button>
@@ -48,4 +60,4 @@ const mapStateToProps = (state) => {
     return { cart: state.cart }
 }
 
-export default connect(mapStateToProps, { addToCart })(CartButton)
+export default connect(mapStateToProps, { addToCart, removeFromCart })(CartButton)
