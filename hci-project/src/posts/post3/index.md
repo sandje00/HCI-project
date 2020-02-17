@@ -1,26 +1,51 @@
 ---
-slug: post3
-title: Post 3
-date: 2012-11-17
+slug: hooks-vs-redux
+title: React Hooks vs. Redux
+date: 2020-02-02
 author: SA
-image: './images/sample.jpeg'
+image: './images/reactvsredux.jpg'
 published: true
 ---
 
-## Lorem Ipsum
+## React Hooks vs. Redux
 
-[Lorem Ipsum](https://www.lipsum.com/)
+![hooks-vs-redux](./images/reactvsredux.jpg)
 
-![post3](./images/sample.jpeg)
+### What is Redux?
 
-### What is Lorem Ipsum?
+Redux is a predictable state management library and architecture which easily integrates with React.
+Redux characteristics:
+* Deterministic state resolution (enabling deterministic view renders when combined with pure components)
+* Transactional state
+* Isolate state management from I/O and side-effects
+* Single source of truth for application state
+* Easily share state between different components
+* Transaction telemetry (auto-logging action objects)
+* Time travel debugging
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+### What are React Hooks?
 
-### Where does it come from?
+React hooks let you use state and React lifecycle features without using `class` and React component lifecycle methods.
+Hooks characteristics:
+* Use state and hook into the component lifecycle without using a `class`
+* Colocate related logic in one place in your component, rather than splitting it between various lifecycle methods
+* Share reusable behaviors independent of component implementations (like the render prop pattern)
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+### When to use Hooks?
 
-### Why do we use it?
+If your component:
+* Doesn’t use the network
+* Doesn’t save or load state
+* Doesn’t share state with other non-child components
+* Does not deal with any business logic or data processing shared with other parts of the application
 
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+### When to use Redux?
+
+If your component:
+* Uses I/O like network or device APIs
+* Saves or loads state
+* Shares its state with other non-child components
+* Deals with any business logic or data processing shared with other parts of the application
+
+### Check out also
+* [Eric Elliot: Do React Hooks Replace Redux?](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)

@@ -1,17 +1,17 @@
 ---
 slug: post6
 title: Post 6
-date: 2012-11-25
+date: 2012-12-01
 author: SA
-image: './images/sample.jpeg'
+image: './images/code3.jpg'
 published: true
 ---
 
-## Lorem Ipsum
+## Post 6
 
 [Lorem Ipsum](https://www.lipsum.com/)
 
-![post6](./images/sample.jpeg)
+![post6](./images/code3.jpg)
 
 ### What is Lorem Ipsum?
 

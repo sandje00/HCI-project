@@ -1,26 +1,45 @@
 ---
-slug: post2
-title: Post 2
-date: 2012-11-05
+slug: react-vs-vue
+title: React vs. Vue
+date: 2012-09-02
 author: SA
-image: './images/sample.jpeg'
+image: './images/reactvue.png'
 published: true
 ---
 
-## Lorem Ipsum
+## React vs. Vue
 
-[Lorem Ipsum](https://www.lipsum.com/)
+![react-vs-vue](./images/reactvue.png)
 
-![post2](./images/sample.jpeg)
+Nowadays React.js and Vue.js are two leading front end JavaScript frameworks. Both of them have their own particularities and similarities, advantages and disadvantages, which doesn't make any of them generally better; it depends on your use case. Explore what makes them so much in demand and how to choose the framework based on your needs!
 
-### What is Lorem Ipsum?
+### Similarities
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+* **Virtual DOM** - instead of re-rendering the whole page as (regular DOM), only those objects that have changed are updated, saving the time and resources that heavy DOM manipulations otherwise take up
+* **Component-based UI development** - UI is built from components, either from libraries or arbitrary user defined, which provide code reusability, improve developer productivity, and speed up the development process
+* **Component lifecycle** - in each framework components have similar lifecycles and there is a set of methods to efficiently manipulate them
+* **Focus on the view library** - separate libraries for routing, state management, etc.
 
-### Where does it come from?
+### Differences
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+#### Coding style
+React relies on Javascript functional programing paradigm using so called JSX (JavaScript XML). It allows combining HTML tags with arbitrary, user defined tags, style and JavaScript code. Tags are UI components and JS code manipulates them.
+Vue follows the convention of separation of HTML, style and data/logic. Vue component is .vue file separated in three parts: template for markup, script for JS code and style for style sheets, which makes it more intuitive and easier to learn.
 
-### Why do we use it?
+#### Flexibility
+The main advantage of React over Vue is its flexibility.
+Vue is a true JS framework. On the other hand, React is a library with framework-like features so convincing that is regarded as JS framework. That kind of nature gives React more flexibility when it comes to choosing when to include it in the code as a developer.
 
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+#### State management
+With both frameworks allow stateful components maintenance. React uses hooks which are great for component level state management. It is also possible to achieve it in Vue with simple store creationwithin the data object, but its complexity grows with the growth of data in the state. For both frameworks there are state management modules for more complex use cases, Redux and Vuex.
+
+#### Size
+When it comes to size, Vue is smaller than React. According to GitHub Gist, React 16.2.0 + React DOM has a file size of 97.5 kilobytes while the same for Vue 2.4.2 is 58.8 kilobytes.
+
+#### Use Cases
+As seen in this post, both React and Vue are good frameworks, but using their full potential depends on the use case.
+If you want to create a complex and scalable app, choose React, but if your app is rather simple and lightweight, Vue is the better option.
+
+#### Check out also
+* [Vijay Singh: React vs. Vue](https://hackr.io/blog/react-vs-vue)
+* [Maja Nowak: Vue vs. React in 2019: Which Framework to Choose and When](https://www.monterail.com/blog/vue-vs-react-2019)

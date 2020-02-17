@@ -1,13 +1,13 @@
 ---
 slug: post5
 title: Post 5
-date: 2012-11-20
+date: 2012-19-01
 author: SA
-image: './images/sample.jpeg'
+image: './images/code2.jpg'
 published: true
 ---
 
-## Lorem Ipsum
+## Post 5
 
 [Lorem Ipsum](https://www.lipsum.com/)
 

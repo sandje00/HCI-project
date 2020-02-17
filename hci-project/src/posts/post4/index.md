@@ -1,26 +1,44 @@
 ---
-slug: post4
-title: Post 4
-date: 2012-11-18
+slug: promises-in-js
+title: Promises in JavaScript
+date: 2020-11-18
 author: SA
-image: './images/sample.jpeg'
+image: './images/promises.jpeg'
 published: true
 ---
 
-## Lorem Ipsum
+## Promises in JavaScript
 
-[Lorem Ipsum](https://www.lipsum.com/)
+![promises-in-js](./images/promises.jpeg)
 
-![post4](./images/sample.jpeg)
+### What is a Promise?
 
-### What is Lorem Ipsum?
+A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+Promises are eager, meaning that a promise will start doing whatever task you give it as soon as the promise constructor is invoked. If you need lazy, check out observables or tasks.
+Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code.
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+### Example
 
-### Where does it come from?
+#### Promise:
+```
+let promise = new Promise((resolve, reject) => {
+    const x = 2;
+    const y = 2
+    if(x === y) { 
+        resolve(); 
+    } else { 
+        reject(); 
+    } 
+})
+```
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+#### Usage:
+```
+promise
+    .then(() => console.log('Success'))
+    .catch(() => console.log('Error')) 
+```
 
-### Why do we use it?
-
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+### Check out also
+* [Eric Elliot: Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+* [neerajnegi174: JavaScript Promises](https://www.geeksforgeeks.org/javascript-promises/)
