@@ -23,7 +23,8 @@ const Button = ({ bookmarks, unbookmark, id }) => {
                 borderStyle: "none",
                 height: "40px",
                 width: "90px",
-                textAlign: "center"
+                textAlign: "center",
+                cursor: "pointer"
             }}
         >
             Remove
@@ -94,7 +95,8 @@ const BookmarksItem = ({ tutorial }) => {
                                     height: "40px",
                                     width: "90px",
                                     textAlign: "center",
-                                    mr: "20px"
+                                    mr: "20px",
+                                    cursor: "pointer"
                                 }}>
                                 More
                             </button>

@@ -102,6 +102,12 @@
     color: #ffffff;
     font-size: 2em;
     margin-left: 15px;
+    cursor: pointer;
+}
+
+.icons:hover,
+.icons:active {
+    color: #ffb300;
 }
 
 .moreButton {
