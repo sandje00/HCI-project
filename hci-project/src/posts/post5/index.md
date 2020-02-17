@@ -11,7 +11,7 @@ published: true
 
 [Lorem Ipsum](https://www.lipsum.com/)
 
-![post5](./images/sample.jpeg)
+![post5](./images/code2.jpg)
 
 ### What is Lorem Ipsum?
 
