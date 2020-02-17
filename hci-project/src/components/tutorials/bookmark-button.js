@@ -44,8 +44,6 @@ const BookmarkButton = ({ tutorial, bookmarks }) => {
                     Bookmark
                 </span>
             )}
-                Bookmark
-            </span>
             <FaBookmark 
                 sx={{
                     color: added ? "primary" : "#000000",
