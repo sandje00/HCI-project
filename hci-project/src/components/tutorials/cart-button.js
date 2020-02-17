@@ -35,11 +35,15 @@ const CartButton = ({ cart, tutorial }) => {
                 mt: "20px"
             }}
         >
-            <span sx={{
-                color: added ? "primary" : "#000000"
-            }}>
-                Add to cart
-            </span>
+            {added ? (
+                <span sx={{ color: "primary" }}>
+                    Remove
+                </span>
+            ) : (
+                <span sx={{ color: "#000000" }}>
+                    Add to cart
+                </span>
+            )}
             <FaShoppingCart 
                 sx={{
                     color: added ? "primary" : "#000000",
