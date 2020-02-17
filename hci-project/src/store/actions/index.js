@@ -5,7 +5,8 @@ import {
     REMOVE_FROM_CART,
     BOOKMARK,
     UNBOOKMARK,
-    GET_TOTAL } from "./types"
+    GET_TOTAL,
+    EMPTY_CART } from "./types"
 
 export const signin = () => {
     return ({
@@ -56,5 +57,12 @@ export const getTotal = (total, cart) => {
     return ({
         type: GET_TOTAL,
         payload: total
+    })
+}
+
+export const emptyCart = () => {
+    return ({
+        type: EMPTY_CART,
+        payload: []
     })
 }

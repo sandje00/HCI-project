@@ -4,15 +4,20 @@ import { jsx, Box } from "theme-ui"
 import { Flex, Divider } from "@theme-ui/components"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
+import { useState } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Modal from "../components/modal"
 import CartItem from "../components/tutorials/cart-item"
 import { getTotal } from "../store/actions"
 
 const Cart = ({ cart, total, getTotal }) => {
   console.log(cart)
   getTotal(total, cart)
+
+  const [modal, setModal] = useState(false)
+
   return (
     <Layout>
       <SEO title="Cart"/>
@@ -55,19 +60,25 @@ const Cart = ({ cart, total, getTotal }) => {
           </span>
         </Box>
         <Box>
-          <button sx={{
-            borderRadius: "10px",
-            borderStyle: "none",
-            backgroundColor: "accent",
-            height: "60px",
-            width: "80px",
-            textAlign: "center",
-            fontSize: "1.2em"
+          <button 
+            onClick={e => setModal(true)}
+            sx={{
+              borderRadius: "10px",
+              borderStyle: "none",
+              backgroundColor: "accent",
+              height: "60px",
+              width: "80px",
+              textAlign: "center",
+              fontSize: "1.2em",
+              cursor: "pointer"
           }}>
             <b>Buy</b>
           </button>
         </Box>
       </Flex>
+      {modal && (
+        <Modal isOpen={modal}/>
+      )}
     </Layout>
   )
 }

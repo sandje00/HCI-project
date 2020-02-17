@@ -5,7 +5,8 @@ import {
   REMOVE_FROM_CART,
   BOOKMARK,
   UNBOOKMARK,
-  GET_TOTAL } from "../actions/types"
+  GET_TOTAL,
+  EMPTY_CART } from "../actions/types"
 
 const reducer = (state, action) => {
   if (action.type === SIGNIN) {
@@ -41,6 +42,11 @@ const reducer = (state, action) => {
   if (action.type === GET_TOTAL) {
     return Object.assign({}, state, {
       total: action.payload
+    })
+  }
+  if(action.type === EMPTY_CART) {
+    return Object.assign({}, state, {
+      cart: action.payload
     })
   }
   return state
