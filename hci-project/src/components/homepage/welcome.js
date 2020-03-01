@@ -7,7 +7,7 @@ import Image from "gatsby-image"
 
 const Welcome = ({ picture }) => {
     const getStarted = () => {
-        navigate("../../signup")
+        navigate("../../tutorials")
     }
 
     return (
