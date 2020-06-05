@@ -8,7 +8,7 @@ import { useState } from "react"
 
 import { bookmark, unbookmark } from "../../store/actions"
 
-const BookmarkButton = ({ tutorial, bookmarks }) => {
+const BookmarkButton = ({ tutorial, bookmarks, bookmark, unbookmark }) => {
     const [added, setAdded] = useState(JSON.stringify(bookmarks).includes(JSON.stringify(tutorial)))
     const handleBookmarkClick = () => {
         if(added) {
@@ -57,7 +57,9 @@ const BookmarkButton = ({ tutorial, bookmarks }) => {
 
 BookmarkButton.propTypes = {
     tutorial: PropTypes.object.isRequired,
-    bookmarks: PropTypes.array.isRequired
+    bookmarks: PropTypes.array.isRequired,
+    bookmark: PropTypes.func.isRequired,
+    unbookmark: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {

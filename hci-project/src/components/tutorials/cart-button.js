@@ -8,7 +8,7 @@ import { useState } from "react"
 
 import { addToCart, removeFromCart } from "../../store/actions"
 
-const CartButton = ({ cart, tutorial }) => {
+const CartButton = ({ cart, tutorial, addToCart, removeFromCart }) => {
     const [added, setAdded] = useState(JSON.stringify(cart).includes(JSON.stringify(tutorial)))
     const handleCartClick = () => {
         if(added) {
@@ -57,7 +57,9 @@ const CartButton = ({ cart, tutorial }) => {
 
 CartButton.propTypes = {
     tutorial: PropTypes.object.isRequired,
-    cart: PropTypes.array.isRequired
+    cart: PropTypes.array.isRequired,
+    addToCart: PropTypes.func.isRequired,
+    removeFromCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
