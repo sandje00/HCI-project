@@ -13,7 +13,6 @@ import CartItem from "../components/tutorials/cart-item"
 import { getTotal } from "../store/actions"
 
 const Cart = ({ cart, total, getTotal }) => {
-  console.log(cart)
   getTotal(total, cart)
 
   const [modal, setModal] = useState(false)

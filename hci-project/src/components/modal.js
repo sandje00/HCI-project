@@ -82,7 +82,7 @@ const Second = () => {
     )
 }
 
-const Modal = ({ isOpen, cart, total }) => {
+const Modal = ({ isOpen, cart, total, emptyCart }) => {
     const [open, setOpen] = useState(isOpen)
     const [number, setNumber] = useState(1)
 
@@ -117,7 +117,7 @@ const Modal = ({ isOpen, cart, total }) => {
             }}>
                 <FaTimes 
                     sx={{ fontSize: "1.5em", cursor: "pointer", ml: "575px" }}
-                    onClick={e => setOpen(false)}
+                    onClick={e => goToCart()}
                 />
                 {number === 1 && (
                     <div sx={{ margin: "0 auto" }}>
@@ -251,7 +251,8 @@ const Modal = ({ isOpen, cart, total }) => {
 Modal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     cart: PropTypes.array.isRequired,
-    total: PropTypes.number.isRequired
+    total: PropTypes.number.isRequired,
+    emptyCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
