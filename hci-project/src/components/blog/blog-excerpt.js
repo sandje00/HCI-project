@@ -25,7 +25,8 @@ export default ({ posts }) => {
           flexDirection: condition ? "column" : "row",
           justifyContent: "space-around",
           alignItems: condition ? "stretch" : "center",
-          mt: "50px"
+          mt: "50px",
+          ml: condition ? "20px" : "0px"
         }}
       >
         {condition &&
@@ -48,7 +49,7 @@ export default ({ posts }) => {
             </h4>
           }
           <p sx={{ 
-            maxWidth: condition ? "255px" : "500px",
+            maxWidth: condition ? "300px" : "500px",
             textAlign: "justify"
           }}>
             {excerpt}
@@ -63,7 +64,8 @@ export default ({ posts }) => {
               borderStyle: "none",
               height: "40px",
               width: "100px",
-              textAlign: "center"
+              textAlign: "center",
+              cursor: "pointer"
             }}
           >
             More

@@ -19,9 +19,14 @@ export default {
       fontSize: [2, 3, 4],
       color: "primary"
     },
+    h4: {
+      ...base.styles.h4,
+      fontSize: [2, 3, 4],
+      color: "primary"
+    },
     p: {
       ...base.styles.p,
-      fontSize: [2, 3, 4],
+      fontSize: [1, 2, 3],
       textAlign: "justify"
     }
   },
