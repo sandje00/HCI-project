@@ -139,8 +139,7 @@ const Modal = ({ isOpen, cart, total, emptyCart }) => {
                             mt: "50px"
                         }}>
                             <Box>
-                                <button 
-                                    onClick={goToCart}
+                                <button
                                     sx={{
                                         borderRadius: "10px",
                                         borderStyle: "none",
