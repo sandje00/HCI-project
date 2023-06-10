@@ -11,7 +11,7 @@
     "@react-hook/window-size": "^1.0.10",
     "@theme-ui/components": "^0.2.50",
     "@theme-ui/presets": "^0.2.44",
-    "gatsby": "^2.17.6",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-manifest": "^2.2.25",
     "gatsby-plugin-mdx": "^1.0.59",
